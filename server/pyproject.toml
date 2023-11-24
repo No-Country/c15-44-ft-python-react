@@ -1,0 +1,9 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [{ name = "no-country", email = "no-country@noname.com" }]
+dependencies = ["fastapi>=0.104.1"]
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
