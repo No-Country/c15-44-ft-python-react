@@ -135,6 +135,32 @@ Descripcion general del uso de la app/web
         <a href="https://www.google.com" target="_blank">
           <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
         </a>
+        <a href="" target="_blank" rel="author">
+          <img width="110" src="https://media.vandalsports.com/i/1706x960/8-2021/202183171816_1.jpg.webp"/>
+        </a>
+        <a href="https://github.com/" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">No Name</br><small>Front-End</small></h4>
+        </a>
+        <div style='display: flex; flex-direction: column'>
+        <a href="" target="_blank">
+          <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://www.google.com" target="_blank">
+          <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+        <a href="" target="_blank" rel="author">
+          <img width="110" src="https://media.vandalsports.com/i/1706x960/8-2021/202183171816_1.jpg.webp"/>
+        </a>
+        <a href="https://github.com/" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">No Name</br><small>Front-End</small></h4>
+        </a>
+        <div style='display: flex; flex-direction: column'>
+        <a href="" target="_blank">
+          <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://www.google.com" target="_blank">
+          <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
         </div>
       </div>
     </td>
