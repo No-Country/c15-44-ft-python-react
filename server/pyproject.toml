@@ -4,21 +4,31 @@ version = ""
 description = ""
 authors = [{ name = "no-country", email = "no-country@noname.com" }]
 dependencies = [
-    "fastapi>=0.104.1",
-    "uvicorn>=0.24.0.post1",
-    "pydantic>=2.5.2",
+  "fastapi>=0.104.1",
+  "uvicorn>=0.24.0.post1",
+  "sqlmodel>=0.0.12",
+  "sqlalchemy>=2.0.23",
+  "pydantic[dotenv]>=1.9.0",
+  "psycopg[binary]>=3.1.13",
 ]
 requires-python = ">=3.10"
 readme = "README.md"
 license = { text = "MIT" }
 
 [tool.pdm.scripts]
-start = { shell = "cd src && uvicorn main:app --reload" }
+start.cmd = "uvicorn main:app --reload"
+start.env = { PYTHONPATH = "./src" }
 lint = "pdm run ruff"
 format = "pdm run black"
 laf = { composite = ["lint src/", "format src/"] }
 sort = "pdm run isort src"
 pre-commit = { composite = ["laf", "sort"] }
+migrate.cmd = "alembic revision --autogenerate"
+migrate.env = { PYTHONPATH = "./src" }
+migrate-apply.cmd = "alembic upgrade head"
+migrate-apply.env = { PYTHONPATH = "./src" }
+migrate-revert.cmd = "alembic downgrade -1"
+migrate-rever.env = { PYTHONPATH = "./src" }
 
 [tool.pdm.dev-dependencies]
 test = ["pytest>=7.4.3"]
