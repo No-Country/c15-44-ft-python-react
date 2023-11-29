@@ -6,6 +6,7 @@ authors = [{ name = "no-country", email = "no-country@noname.com" }]
 dependencies = [
     "fastapi>=0.104.1",
     "uvicorn>=0.24.0.post1",
+    "pydantic>=2.5.2",
 ]
 requires-python = ">=3.10"
 readme = "README.md"

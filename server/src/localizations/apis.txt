@@ -1,0 +1,43 @@
+    Get All Countries:
+        Endpoint: /countries
+        Method: GET
+        Description: Retrieve a list of all countries.
+
+    Get All Provinces:
+        Endpoint: /provinces
+        Method: GET
+        Description: Retrieve a list of all provinces, regardless of the country.
+
+    Get All Provinces for a Specific Country:
+        Endpoint: /countries/{country_id}/provinces
+        Method: GET
+        Description: Retrieve a list of provinces for a specific country.
+
+    Get All Countries Without Provinces:
+        Endpoint: /countries/without_provinces
+        Method: GET
+        Description: Retrieve a list of countries that don't have provinces.
+
+    Create Country:
+        Endpoint: /countries
+        Method: POST
+        Description: Create a new country.
+        Request Body: Information about the new country.
+
+    Create Province for a Specific Country:
+        Endpoint: /countries/{country_id}/provinces
+        Method: POST
+        Description: Create a new province for a specific country.
+        Request Body: Information about the new province.
+
+    Update Country:
+        Endpoint: /countries/{country_id}
+        Method: PUT or PATCH
+        Description: Update information about a specific country.
+        Request Body: Updated information for the country.
+
+    Update Province for a Specific Country:
+        Endpoint: /countries/{country_id}/provinces/{province_id}
+        Method: PUT or PATCH
+        Description: Update information about a specific province for a specific country.
+        Request Body: Updated information for the province.
