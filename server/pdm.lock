@@ -5,7 +5,8 @@
 groups = ["default", "test", "lint", "imports"]
 strategy = ["cross_platform"]
 lock_version = "4.4"
-content_hash = "sha256:ecb3766118d755c43fae1f1554793f509112e7ea086739e3bb85525ef6bf77e1"
+
+content_hash = "sha256:ecb3766118d755c43fae1f1554793f509112e7ea086739e3bb85525ef6
 
 [[package]]
 name = "alembic"

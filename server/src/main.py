@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 import events.api as eventsApi
+import localizations.api as localizationApi
 
 from .api import healthcheck
 from .db import init_db
@@ -19,6 +20,7 @@ def create_app():
 
     app.include_router(healthcheck.router)
     app.include_router(eventsApi.router)
+    app.include_router(localizationApi.router)
 
     return app
 
