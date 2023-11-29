@@ -1,8 +1,7 @@
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, status
 
 from events import crud
 from events.schemas import CreateEvent, ResponseEvent
-
 
 router = APIRouter(prefix="/events", tags=["events"])
 
@@ -10,11 +9,6 @@ router = APIRouter(prefix="/events", tags=["events"])
 @router.get("/")
 async def get_events():
     events = await crud.get_events()
-
-    if len(events) >= 500:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Too many events"
-        )
 
     return events
 
