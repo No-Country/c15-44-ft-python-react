@@ -1,14 +1,26 @@
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 
-from api import healthcheck
-import events
+import events.api as eventsApi
+import localizations.api as localizationApi
+
+from .api import healthcheck
+from .db import init_db
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    init_db()
+    yield
 
 
 def create_app():
-    app = FastAPI(debug=True)
+    app = FastAPI(debug=True, lifespan=lifespan)
 
     app.include_router(healthcheck.router)
-    app.include_router(events.router)
+    app.include_router(eventsApi.router)
+    app.include_router(localizationApi.router)
 
     return app
 
