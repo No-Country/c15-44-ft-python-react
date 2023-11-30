@@ -38,6 +38,10 @@ async def get_provinces_bycountryid(country_id):
 async def post_country(country):
     return country
 
+#create province for existing country
+async def post_country(province):
+    return province
+
 #delete country and or province
 
 #update country
