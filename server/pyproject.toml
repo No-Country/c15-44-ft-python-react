@@ -10,7 +10,9 @@ dependencies = [
     "sqlalchemy>=2.0.23",
     "pydantic[dotenv]>=1.9.0",
     "psycopg[binary]>=3.1.13",
-    "psycopg2>=2.9.9",
+    "fastapi-users[sqlalchemy]>=12.1.2",
+    "fastapi-users-db-sqlmodel>=0.3.0",
+    "setuptools>=69.0.2",
     "alembic>=1.12.1",
 ]
 requires-python = ">=3.10"
