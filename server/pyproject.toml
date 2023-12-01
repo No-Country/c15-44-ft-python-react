@@ -4,12 +4,16 @@ version = ""
 description = ""
 authors = [{ name = "no-country", email = "no-country@noname.com" }]
 dependencies = [
-  "fastapi>=0.104.1",
-  "uvicorn>=0.24.0.post1",
-  "sqlmodel>=0.0.12",
-  "sqlalchemy>=2.0.23",
-  "pydantic[dotenv]>=1.9.0",
-  "psycopg[binary]>=3.1.13",
+    "fastapi>=0.104.1",
+    "uvicorn>=0.24.0.post1",
+    "sqlmodel>=0.0.12",
+    "sqlalchemy>=2.0.23",
+    "pydantic[dotenv]>=1.9.0",
+    "psycopg[binary]>=3.1.13",
+    "fastapi-users[sqlalchemy]>=12.1.2",
+    "fastapi-users-db-sqlmodel>=0.3.0",
+    "setuptools>=69.0.2",
+    "alembic>=1.12.1",
 ]
 requires-python = ">=3.10"
 readme = "README.md"
