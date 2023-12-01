@@ -2,11 +2,12 @@ from fastapi import APIRouter, status
 from localizations import crud
 from localizations.schemas import ResponseProvince, CreateCountry
 from typing import List
+from db import engine
 
 router = APIRouter(prefix="/localization", tags=["localization"])
 
 @router.get("/country")
-async def get_all_countries():
+async def get_all_countries(db: engine = Depends(engine.session)):
     all_localizations = await crud.get_countries()
 
     return all_localizations

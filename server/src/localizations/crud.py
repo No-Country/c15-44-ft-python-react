@@ -1,3 +1,8 @@
+from sqlmodel import Session
+from sqlalchemy import Engine
+from models import Localization
+from db import get_engine
+
 all_localizations = [
     {
         "country": "Argentina",
@@ -17,13 +22,18 @@ all_localizations = [
 ]
 
 #all countries - no provinces
-async def get_countries():
+async def get_countries(engine: Engine = Depends(get_engine)):
+    
+    with Session(engine) as session:
+        all_countries = session.get(Localization)
+    
     unique_countries = set()
     countries = [
-        {"country": country["country"], "country_id": country["country_id"]} 
-        for country in all_localizations 
+        {"country": country["country"], "id": country["id"]} 
+        for country in all_countries 
         if country["country"] not in unique_countries and (unique_countries.add(country["country"]) or True)
         ]
+    
     return countries
 
 #provinces for specified country
