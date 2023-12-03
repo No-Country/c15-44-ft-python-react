@@ -1,24 +1,24 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-
+import './ImgCarousel.css'
 const Pepe = () => {
   const images = [
-    'https://picsum.photos/id/237/200/300',
-    'https://picsum.photos/id/247/200/300',
-    'https://picsum.photos/id/257/200/300',
-    'https://picsum.photos/id/247/200/300',
-    'https://picsum.photos/id/237/200/300',
+    'https://cdn.joinnus.com/files/2023/12/hBMneNHM2QzA0vl.jpg',
+    'https://cdn.joinnus.com/files/2023/12/hBMneNHM2QzA0vl.jpg',
+    'https://cdn.joinnus.com/files/2023/11/7QNSb2cSvvN4aZz.jpeg',
+    'https://cdn.joinnus.com/files/2023/12/hBMneNHM2QzA0vl.jpg',
+    'https://cdn.joinnus.com/files/2023/12/vS3WbyyJeiHkKli.PNG',
   ];
 
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      items: 1,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      items: 1,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
@@ -27,10 +27,20 @@ const Pepe = () => {
   };
 
   return (
-    <Carousel responsive={responsive}>
+    <Carousel responsive={responsive} 
+    itemClass="image-item"
+    infinite
+    autoPlay 
+    autoPlaySpeed={100000}
+    showDots={true}
+    transitionDuration={500}
+    
+    draggable={true}
+    swipeable={true}
+     >
       {images.map((image, index) => (
-        <div key={index}>
-          <img src={image} alt={`Image ${index + 1}`} />
+        <div key={index} className='divcarousel' >
+          <img src={image} draggable="false" alt={`Image ${index + 1}`} />
         </div>
       ))}
     </Carousel>
