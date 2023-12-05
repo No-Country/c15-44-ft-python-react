@@ -10,4 +10,4 @@ class LocalizationModel(BaseModel):
     country_id: int
     
 class ResponseProvince(LocalizationModel):
-    province: str
+    province: Annotated[str, Field(min_length=3)]

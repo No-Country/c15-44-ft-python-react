@@ -1,8 +1,7 @@
 from functools import lru_cache
 
-from pydantic import BaseSettings, SecretStr
-
-
+from pydantic import SecretStr
+from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     database_url: SecretStr
     secret: SecretStr

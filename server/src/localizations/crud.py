@@ -1,7 +1,8 @@
-from sqlmodel import Session
+from fastapi import Depends
+from sqlmodel import Session, select
 from sqlalchemy import Engine
-from .models import Localization
-from db import get_engine
+from .models import Country, Province
+from db import engine
 
 all_localizations = [
     {
@@ -22,19 +23,11 @@ all_localizations = [
 ]
 
 #all countries - no provinces
-async def get_countries(engine: Engine = Depends(get_engine)):
-    
+async def get_countries():
     with Session(engine) as session:
-        all_countries = session.get(Localization)
-    
-    unique_countries = set()
-    countries = [
-        {"country": country["country"], "id": country["id"]} 
-        for country in all_countries 
-        if country["country"] not in unique_countries and (unique_countries.add(country["country"]) or True)
-        ]
-    
-    return countries
+        query = select(Country)
+        all_countries = session.exec(query)
+    return [{"country": country["country"]} for country in all_countries]
 
 #provinces for specified country
 async def get_provinces_bycountryid(country_id):
@@ -46,10 +39,17 @@ async def get_provinces_bycountryid(country_id):
 
 #create country and province
 async def post_country(country):
+    with Session(engine) as session:
+        select.add(country)
+        session.commit()
     return country
 
 #create province for existing country
 async def post_country(province):
+    with Session(engine) as session:
+        new_province = Province(name=Province["province"], country_id = Province["country_id"], country = Province["country"])
+        select.add(new_province)
+        session.commit()
     return province
 
 #delete country and or province
