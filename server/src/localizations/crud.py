@@ -1,6 +1,6 @@
 from sqlmodel import Session
 from sqlalchemy import Engine
-from models import Localization
+from .models import Localization
 from db import get_engine
 
 all_localizations = [
