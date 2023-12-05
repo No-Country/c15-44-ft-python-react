@@ -8,7 +8,6 @@ import healthcheck.api as healthcheck_api
 
 from db import init_db
 from auth import register_auth_routers
->>>>>>>>> Temporary merge branch 2
 
 
 @asynccontextmanager

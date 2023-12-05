@@ -10,10 +10,7 @@ from sqlmodel import SQLModel
 from src.events.models import *
 from src.auth.models import *
 from src.localizations.models import *
-=========
 from src.auth.models import *
->>>>>>>>> Temporary merge branch 2
-
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
