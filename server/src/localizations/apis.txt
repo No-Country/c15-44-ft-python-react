@@ -41,3 +41,33 @@
         Method: PUT or PATCH
         Description: Update information about a specific province for a specific country.
         Request Body: Updated information for the province.
+
+
+
+CREATE TABLE IF NOT EXISTS user (
+    user_id SERIAL PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    is_admin BOOLEAN DEFAULT FALSE,
+    is_organizer BOOLEAN DEFAULT FALSE
+);
+
+CREATE TABLE IF NOT EXISTS event (
+    event_id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    geolocation_coords VARCHAR(255) NOT NULL,
+    organizer_id INT REFERENCES user(user_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS event_attendees (
+    event_id INT REFERENCES event(event_id) ON DELETE CASCADE,
+    user_id INT REFERENCES user(user_id) ON DELETE CASCADE,
+    PRIMARY KEY (event_id, user_id)
+);
+
+CREATE TABLE IF NOT EXISTS organizer (
+    organizer_id SERIAL PRIMARY KEY,
+    billing_address VARCHAR(255) NOT NULL,
+    related_user_id INT REFERENCES user(user_id) ON DELETE CASCADE
+);
