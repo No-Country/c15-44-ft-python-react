@@ -5,6 +5,8 @@
 groups = ["default", "imports", "lint", "test"]
 strategy = ["cross_platform"]
 lock_version = "4.4"
+
+content_hash = "sha256:6936d61cd9dfa84e70e5b776968a169495bc091829bcc25feee4dee62dd63ad6"
 content_hash = "sha256:5d7f22de5641d5989ca16921b4f7f728af15e79ab8e44a93182d7d33bdabea50"
 
 [[package]]
@@ -748,6 +750,7 @@ dependencies = [
 files = [
     {file = "PyJWT-2.8.0-py3-none-any.whl", hash = "sha256:59127c392cc44c2da5bb3192169a91f429924e17aff6534d70fdc02ab3e04320"},
     {file = "PyJWT-2.8.0.tar.gz", hash = "sha256:57e28d156e3d5c10088e0c68abb90bfac3df82b40a71bd0daa20c65ccd5c23de"},
+>>>>>>>>> Temporary merge branch 2
 ]
 
 [[package]]
