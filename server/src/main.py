@@ -10,7 +10,6 @@ from db import init_db
 from auth import register_auth_routers
 
 
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_db()
