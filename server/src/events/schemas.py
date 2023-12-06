@@ -5,11 +5,12 @@ from pydantic import BaseModel, Field
 
 
 class CreateEvent(BaseModel):
-    name: Annotated[str, Field(min_length=5)]
+    name: Annotated[str, Field(min_length=2)]
     date: datetime
-    price: int
+    price: float
 
 
 class ResponseEvent(CreateEvent):
     id: int
-    test: str
+    country_id: str
+    province_id: str
