@@ -60,7 +60,7 @@ async def create_event(event):
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=f"Failed to create event: {str(e)}")
 
 
-async def delete_event(event_id: int):
+async def delete_event_by_id(event_id: int):
     with Session(engine) as session:
         event = session.get(Event, event_id)
         if not event:

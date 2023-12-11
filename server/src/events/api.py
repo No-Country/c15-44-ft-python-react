@@ -37,3 +37,8 @@ async def create_event(event: Event):
 async def update_event(event: Event):
     updevent = await crud.update_event_by_id(event)
     return updevent
+
+@router.delete("/{event_id}")
+async def delete_event(event_id: int):
+    deletedevent = await delete_event_by_id(event_id)
+    return deletedevent
