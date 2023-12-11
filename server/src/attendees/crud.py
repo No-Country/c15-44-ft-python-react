@@ -1,18 +1,18 @@
-from .models import Event, EventImg
+from .models import EventAttendees
 from fastapi import HTTPException, status
 from sqlmodel import Session,select, delete
 from db import engine
 
-async def get_all_events(country_id):
+async def get_attendees_by_event(event_id):
     with Session(engine) as session:
-        query = select(Event).where(Event.country_id == country_id)
-        events = session.exec(query).all()
-        if not events:
+        query = select(EventAttendees).where(EventAttendees.id == event_id)
+        attendees = session.exec(query).all()
+        if not attendees:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
-                detail=f"No events found for this country: {country_id}"
+                detail=f"No event not found with this id: {event_id}"
             )
-    return events
+    return attendees
 
 
 async def get_event_by_id(event_id: int):
@@ -48,10 +48,10 @@ async def get_event_images(event_id: int):
             )
     return eventimages
 
-async def create_event(event):
+async def create_event_attendee(attendee, event_id):
     try:
         with Session(engine) as session:
-            new_event=Event(name=event.name)
+            new_event=EventAttendees(user_id=attendee, event_id = event_id)
             session.add(new_event)
             session.commit()
             session.refresh(new_event)
@@ -60,31 +60,16 @@ async def create_event(event):
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=f"Failed to create event: {str(e)}")
 
 
-async def delete_event(event_id: int):
+async def delete_attendee(user_id = int, event_id = int):
     with Session(engine) as session:
-        event = session.get(Event, event_id)
+        query = select(EventAttendees).where(EventAttendees.event_id == event_id, EventAttendees.user_id == user_id)
+        event = session.exec(query).all()
         if not event:
             raise HTTPException(status.HTTP_404_NOT_FOUND, detail="Event not found")
         try:
-            session.exec(delete(EventImg).where(EventImg.event_id == event_id))
-            session.exec(delete(Event).where(Event.id == event_id))
+            session.exec(delete(EventAttendees).where(EventAttendees.event_id == event_id, EventAttendees.user_id == user_id))
             session.commit()
             return event
         except Exception as e:
             session.rollback()
             raise HTTPException(status.HTTP_409_CONFLICT, detail=f"Failed to delete event: {str(e)}")
-
-
-async def update_event_by_id(update_event):
-    with Session(engine) as session:
-        existing_event = session.get(Event, update_event.id)
-        if not existing_event:
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Event not found")
-
-        for field, value in update_event.dict(exclude_unset=True).items():
-            setattr(existing_event, field, value)
-
-        session.commit()
-        session.refresh(existing_event)
-
-    return existing_event
