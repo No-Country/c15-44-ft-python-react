@@ -14,7 +14,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=web_dev
-      - SQLALCHEMY_DATABASE_URI="postgresql+psycopg://postgres:postgres@db/web_dev"
+      - SQLALCHEMY_DATABASE_URI="postgresql+psycopg://postgres:postgres@db:5432/web_dev"
 
   db:
     build:
