@@ -1,0 +1,3 @@
+version: 1
+buildCommand: docker build -t server .
+startCommand: docker run -p 80:8000 server src.main:app

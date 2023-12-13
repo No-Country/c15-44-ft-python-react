@@ -1,8 +1,10 @@
+from typing import List
+
 from fastapi import APIRouter, status, Depends
 from localizations import crud
 from localizations.schemas import ResponseProvince, CreateCountry
-from typing import List
 from .models import Province, Country
+
 router = APIRouter(prefix="/localization", tags=["localization"])
 
 @router.get("/country")

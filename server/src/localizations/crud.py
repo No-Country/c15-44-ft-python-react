@@ -66,7 +66,7 @@ async def delete_countrybyid(country_id: int):
     with Session(engine) as session:
         country = session.get(Country, country_id)
         if not country:
-            raise HTTPException(status_code=404, detail="Country not found")
+            raise HTTPException(status.HTTP_404_NOT_FOUND, detail="Country not found")
         try:
             session.exec(delete(Province).where(Province.country_id == country_id))
             session.exec(delete(Country).where(Country.id == country_id))
@@ -74,7 +74,7 @@ async def delete_countrybyid(country_id: int):
             return country
         except Exception as e:
             session.rollback()
-            raise HTTPException(status_code=500, detail=f"Failed to delete country: {str(e)}")
+            raise HTTPException(status.HTTP_409_CONFLICT, detail=f"Failed to delete country: {str(e)}")
 #update country
 
 #update province
