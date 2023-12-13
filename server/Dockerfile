@@ -12,13 +12,13 @@ RUN python -m pip install --upgrade pip && \
 
 # Check if pyproject.toml exists, if not, run pdm init
 #RUN if [ ! -f pyproject.toml ]; then pdm init -n; fi
-RUN pdm init --force
+RUN cd /server && pdm init --force
 
 # Install project dependencies
-RUN pdm install
+RUN cd /server && pdm install
 
 # Expose the port your app runs on
 EXPOSE 8000
 
 # Command to run the application
-CMD ["pdm", "run start", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["cd /server && ","pdm", "run start", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
