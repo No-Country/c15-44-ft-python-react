@@ -11,7 +11,8 @@ RUN python -m pip install --upgrade pip && \
     python -m pip install pdm
 
 # Check if pyproject.toml exists, if not, run pdm init
-RUN if [ ! -f pyproject.toml ]; then pdm init -n; fi
+#RUN if [ ! -f pyproject.toml ]; then pdm init -n; fi
+RUN pdm init --force
 
 # Install project dependencies
 RUN pdm install
