@@ -26,6 +26,7 @@ async def get_event_by_id(event_id: int):
             )
     return event
 
+
 async def get_events_by_province(country_id: int, province_id: int):
     with Session(engine) as session:
         query = select(Event).where(Event.country_id == country_id & Event.province_id == province_id)
@@ -34,6 +35,39 @@ async def get_events_by_province(country_id: int, province_id: int):
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
                 detail=f"No events found in this province: {province_id} and country: {country_id}"
+            )
+    return events
+
+async def get_events_by_country(country_id: int):
+    with Session(engine) as session:
+        query = select(Event).where(Event.country_id == country_id)
+        events = session.exec(query).all()
+        if not events:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"No events found for this country: {country_id}"
+            )
+    return events
+
+async def get_events_by_country_category(country_id: int, category_id: int):
+    with Session(engine) as session:
+        query = select(Event).where(Event.country_id == country_id & Event.category_id == category_id)
+        events = session.exec(query).all()
+        if not events:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"No events found in this category: {category_id} and country: {country_id}"
+            )
+    return events
+
+async def get_events_by_category(category_id: int):
+    with Session(engine) as session:
+        query = select(Event).where(Event.category_id == category_id)
+        events = session.exec(query).all()
+        if not events:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"No events found in this category: {category_id}"
             )
     return events
 
@@ -73,6 +107,7 @@ async def delete_event_by_id(event_id: int):
         except Exception as e:
             session.rollback()
             raise HTTPException(status.HTTP_409_CONFLICT, detail=f"Failed to delete event: {str(e)}")
+
 
 
 async def update_event_by_id(update_event):

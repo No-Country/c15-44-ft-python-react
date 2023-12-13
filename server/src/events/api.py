@@ -18,8 +18,23 @@ async def get_event(event_id: int):
     return events
 
 @router.get("country/{country_id}/province/{province_id}")
-async def get_eventsbyprovince(country_id: int,province_id: int):
+async def get_events_by_province(country_id: int,province_id: int):
     events = await crud.get_events_by_province(country_id,province_id)
+    return events
+
+@router.get("country/{country_id}")
+async def get_events_by_province(country_id: int,province_id: int):
+    events = await crud.get_events_by_country(country_id,province_id)
+    return events
+
+@router.get("country/{country_id}/category/{category_id}")
+async def get_events_by_coutnry_by_category(country_id: int,category_id: int):
+    events = await crud.get_events_by_country_category(country_id,category_id)
+    return events
+
+@router.get("/category/{category_id}")
+async def get_events_by_category(category_id: int):
+    events = await crud.get_events_by_category(category_id)
     return events
 
 @router.get("/{event_id}/images")
@@ -40,5 +55,5 @@ async def update_event(event: Event):
 
 @router.delete("/{event_id}")
 async def delete_event(event_id: int):
-    deletedevent = await delete_event_by_id(event_id)
+    deletedevent = await crud.delete_event_by_id(event_id)
     return deletedevent
