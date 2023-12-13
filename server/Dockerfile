@@ -2,7 +2,7 @@ FROM python:3.11.5
 
 WORKDIR /server
 
-# Copy only the necessary files
+# Copy only the necessary files for dependency installation
 COPY pyproject.toml pdm.lock* /server/
 
 # Install pdm
@@ -20,4 +20,3 @@ EXPOSE 8000
 
 # Command to run the application
 CMD ["pdm", "run", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
-
