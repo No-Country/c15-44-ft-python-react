@@ -3,8 +3,8 @@ FROM python:3.11.5
 WORKDIR /server
 
 # Copy only the necessary files for dependency installation
-COPY pyproject.toml pdm.lock /server/
 COPY . /server/
+COPY pyproject.toml pdm.lock /server/
 
 # Install pdm
 RUN python -m pip install --upgrade pip && \
@@ -17,4 +17,4 @@ RUN pdm install
 EXPOSE 8000
 
 # Command to run the application
-CMD ["pdm", "run start", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "-c", "cd /server && pdm run start uvicorn src.main:app --host 0.0.0.0 --port 8000"]
