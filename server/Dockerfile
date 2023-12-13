@@ -14,8 +14,13 @@ WORKDIR /server
 # Check if pyproject.toml exists, if not, run pdm init
 RUN [ ! -f pyproject.toml ] && pdm init -n || true
 
+# Remove existing pdm.lock
+RUN rm -f pdm.lock
+
 # Install project dependencies
 RUN pdm install
+
+#RUN pdm add uvicorn
 
 # Expose the port your app runs on
 EXPOSE 8000
