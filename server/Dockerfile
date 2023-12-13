@@ -10,6 +10,9 @@ COPY pyproject.toml pdm.lock /server/
 RUN python -m pip install --upgrade pip && \
     python -m pip install pdm
 
+# List the contents of the /server directory
+RUN ls -la /server
+
 # Install project dependencies
 RUN pdm install
 
@@ -17,4 +20,4 @@ RUN pdm install
 EXPOSE 8000
 
 # Command to run the application
-CMD ["sh", "-c", "cd /server && pdm run start uvicorn src.main:app --host 0.0.0.0 --port 8000"]
+CMD ["pdm", "run start", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
