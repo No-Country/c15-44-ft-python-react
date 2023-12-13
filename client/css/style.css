@@ -1,0 +1,528 @@
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*==================================
+font-family: 'Poppins', sans-serif;
+==================================== */
+
+.menu-mobile {
+    display: none;
+}
+
+/*=========== TABLE OF CONTENTS ===========
+1.  General css (Reset code)
+2.  Header-top
+3.  Top-area
+4.  Welcome-hero
+5.  List-topics
+6.  Works  
+7.  Explore
+8.  Reviews
+9.  Counter
+10. Blog
+11. Subscribe
+12. Footer
+==========================================*/
+
+/* -------------------------------------
+		1.General css (Reset code)
+--------------------------------------*/
+:root {
+    --color-primary: #353535;
+    --color-secundary: #d60060;
+    --color-third: #fa5f5f;
+    --color-text-dark: #444;
+    --color-text-light: #ffffff ;
+    --background-color: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+body {
+	font-size: 14px;
+    text-transform: initial;
+	overflow-x: hidden;
+    width: 100%;
+}
+
+/* -------------------------------------
+		H's
+--------------------------------------*/
+
+h2 {
+    font-size: 32px;
+    color: var(--color-primary);
+}
+
+h3 {
+    font-size: 24px;
+    color: var(--color-primary);
+}
+
+/* -------------------------------------
+		P's
+--------------------------------------*/
+
+/* -------------------------------------
+		Header
+--------------------------------------*/
+header {
+    height: 80px;
+    width: 100%;
+    background-color: var(--background-color);
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+header, nav, .menu-screen, .menu-screen li, .welcome-search-box, .single-welcome-form { 
+    display: flex;
+}
+
+nav {
+    width: 100%;
+    margin: 0 10px;
+    justify-content: space-between;
+}
+
+.menu-screen li, .logo {
+    margin: 10px;
+    align-items: center;
+}
+
+/* -------------------------------------
+		Logo - Nombre
+--------------------------------------*/
+
+.logo, .menu-screen li a {
+    color: var(--color-primary);
+}
+
+.logo span {
+    color: var(--color-secundary);
+}
+
+/* -------------------------------------
+		END         Logo - Nombre
+--------------------------------------*/
+
+/* -------------------------------------
+		JOIN
+--------------------------------------*/
+.join {
+    margin-top: 80px;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.join > div {
+    margin: 15px;
+}
+
+.join a {
+    color: var(--color-primary);
+}
+
+.join a:hover {
+    color: var(--color-secundary);
+    transition: all .5s ease;
+}
+
+/* -------------------------------------
+		END     JOIN
+--------------------------------------*/
+
+.menu-screen li a:hover {
+    color: var(--color-secundary);
+    transition: .6s ease;
+}
+
+
+
+/* -------------------------------------
+		start       inicio
+--------------------------------------*/
+.welcome {
+    background-image: url('../assets/img/b1.jpg');
+    /* filter: brightness(70%); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.welcome-txt h3 {
+    margin: 25px;
+    font-size: 48px;
+    color: var(--color-text-dark);
+}
+
+.welcome-txt p {
+    margin: 25px;
+    color: var(--color-text-light);
+    font-size: 24px;
+}
+
+.welcome-search-box {
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.search-box {
+    padding: 20px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    margin: 10px;
+    width: 75%;
+}
+
+.search-box form label, .welcome-search button {
+    font-size: 20px;
+    padding: 20px 10px;
+    border-radius: 10px;
+}
+
+.search-box form input {
+    height: 40px;
+    border-radius: 5px;
+    width: 30%;
+}
+
+.welcome-search button{
+    background-color: var(--color-secundary);
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.welcome-search button:hover {
+    background-color: var(--color-third);
+    color: var(--color-text-light);
+    transition: 0.5s ease;
+}
+/* -------------------------------------
+		END     inicio
+--------------------------------------*/
+/* --------------- CARDS --------------- */
+.events-types {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.cards {
+    margin: 20px 20px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .card {
+    margin: 10px;
+    padding: 30px;
+    border: 2px solid var(--color-secundary);
+    border-radius: 10px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card:hover {
+    background-color: var(--color-secundary);
+    color: var(--color-text-light);
+    transition: all .5s ease;
+  }
+  
+
+  .card h5 {
+    font-size: 24px;
+    font-weight: bolder;
+  }
+  
+  .card p {
+    font-size: 14px;
+    font-weight: bolder;
+    text-align: center;
+    margin: 10px 0 0 0;
+  }
+  /* --------------- END CARDS --------------- */
+  /* --------------- SECTION PLAN --------------- */
+  .container-plan {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  .container-plan div {
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .container-plan div > i, h3, p, button {
+    margin: 20px;
+  }
+
+  .container-plan div:hover {
+    background-color: var(--color-secundary);
+    transition: all .5s ease;
+    color: var(--color-text-light);
+    
+  }
+
+  .container-plan div h3:hover{
+    transition: all .5s ease;
+    color: var(--color-text-light);
+    
+  }
+  /* --------------- END SECTION PLAN --------------- */
+
+  /* --------------- SECTION SITES --------------- */
+  .explore-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+
+  .sites {
+    width: 300px;
+    margin: 10px;
+  }
+
+  .sites img {
+    max-width: 100%; /* La imagen se ajustará al ancho del contenedor */
+    height: auto; /* Mantiene la proporción de aspecto de la imagen */
+    display: block; /* Elimina espacio adicional debajo de la imagen */
+  }
+/* --------------- END SECTION SITES --------------- */
+
+/*-------------------------------------
+        8. Reviews
+--------------------------------------*/
+.reviews{padding:117px 0 75px;}
+.reviews-content {margin-top:36px;}
+
+/*single-testimonial-box */
+.single-testimonial-box  {
+    padding: 50px 30px;
+    box-shadow: 0 0px 5px rgba(71,71,71,.2); 
+    overflow-x:hidden;
+    -webkit-transition: .3s; 
+    -moz-transition:.3s; 
+    -ms-transition:.3s; 
+    -o-transition:.3s;
+    transition: .3s;
+}
+.single-testimonial-box:hover{box-shadow:0 10px 20px rgba(21,19,19,.2);}
+.slick-current .single-testimonial-box{box-shadow:0 10px 20px rgba(21,19,19,.2);}
+/*testimonial-description*/
+.single-testimonial-box{
+    width: 404px;
+    background:#fff;
+}
+/* testimonial-info */
+.testimonial-info {
+    display: flex;
+    align-items: center;
+    text-transform:capitalize;
+}
+.testimonial-img {
+    position: relative;
+    top: 11px;
+    margin-right: 5px;
+    border-radius:50%;
+    -webkit-transition: .3s; 
+    -moz-transition:.3s; 
+    -ms-transition:.3s; 
+    -o-transition:.3s;
+    transition: .3s;
+}
+.testimonial-person {
+    margin-left: 15px;
+    margin-top: 11px;
+}
+.testimonial-person h2 {
+    color: #505866;
+    font-size: 18px;
+}
+.testimonial-person h4 {
+    color: #a2a5ab;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+.testimonial-person-star {
+    color: #ffda2b;
+    margin: 9px 4px 0 0;
+}/* testimonial-info */
+
+
+/* testimonial-comment */
+.testimonial-comment {
+    margin-top: 18px;
+}
+.testimonial-comment p{
+    color: #8d939e;
+    font-size: 14px;
+    font-weight: 300;
+}/* testimonial-comment */
+/* SLIDER */
+.slider {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: 300px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.slide .active {
+    opacity: 1;
+}
+/* SLIDER */
+
+/*-------------------------------------
+        END Reviews
+--------------------------------------*/
+
+
+  @media (max-width: 1075px) {
+
+    .search-box {
+        width: 90%;
+    }
+
+    .search-box form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-box form input {
+        width: 100%;
+    }
+
+    .welcome-search button {
+        height: 260px;
+    }
+
+    .menu-screen {
+        display: none;
+    }
+
+    .menu-mobile {
+        display: flex;
+        align-items: center;
+    }
+
+    .mas-opciones {
+        background: linear-gradient( #eae7ec, #d1d0d0);
+        position: fixed;
+        top: 10px;
+        border-radius: 20px;
+        width: 30%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border: 1px black solid;
+        right: 10px;
+      }
+      
+      .mas-opciones p {
+        margin: 10px;
+        font-weight: 600;
+        color: black;
+      }
+      
+      .mas-opciones a{
+        color: black;
+      }
+      
+      .mas-opciones a:hover{
+        color:rgb(74, 73, 73)
+      }
+      
+      
+      .mas-opciones p i {
+        margin: 10px 10px;
+      }
+      
+      .mas-opciones p > i {
+        margin-right: 10px;
+        color: black;
+        font-size: 20px;
+      }
+  }
+  @media (max-width: 768px) {
+
+    .join {
+        justify-content: center;
+    }
+
+    .welcome-txt h3 {
+        font-size: 32px;
+        margin: 10px;
+        text-align: left;
+    }
+
+    .welcome-txt p {
+        font-size: 16px;
+        margin: 10px;
+        text-align: left;
+    }
+
+    .welcome-search-box {
+        flex-direction: column;
+    }
+
+    .search-box form input, .welcome-search {
+        width: 90%;
+    }
+    .welcome-search button{
+        width: 90%;
+        margin: 0;
+        padding: 10px;
+        height: auto;
+    }
+    .card {
+        padding: 15px;
+    }
+
+    .container-plan {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .container-plan div {
+        width: 90%;
+        margin: 10px;
+    }
+    
+
+  }
