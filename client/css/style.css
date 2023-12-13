@@ -1,10 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/*==================================
-font-family: 'Poppins', sans-serif;
-==================================== */
-
 .menu-mobile {
     display: none;
 }
@@ -98,8 +94,13 @@ nav {
     justify-content: space-between;
 }
 
-.menu-screen li, .logo {
+.menu-desktop, .menu-desktop ul {
+    display: flex;
+}
+
+.menu-desktop li, .logo {
     margin: 10px;
+    display: flex;
     align-items: center;
 }
 
@@ -107,7 +108,7 @@ nav {
 		Logo - Nombre
 --------------------------------------*/
 
-.logo, .menu-screen li a {
+.logo, .menu-desktop li a {
     color: var(--color-primary);
 }
 
@@ -146,7 +147,7 @@ nav {
 		END     JOIN
 --------------------------------------*/
 
-.menu-screen li a:hover {
+.menu-desktop li a:hover {
     color: var(--color-secundary);
     transition: .6s ease;
 }
@@ -480,6 +481,144 @@ nav {
       }
   }
   @media (max-width: 768px) {
+
+    /* ---------- Menu Hamburguesa ----------*/
+.menu-desktop {
+    display: none;
+  }
+  
+  .menu-mobile {
+    display: flex;
+    justify-content: flex-end;
+    background-color: transparent;
+  }
+
+  div .logo {
+    height: 90px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  div .logo span {
+      color: var(--color-secundary);
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    background: var(--color-header);
+    position: relative;
+    justify-content: space-between;
+    max-height: 90px;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 10px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.5s ease;
+  }
+  
+  .icono-menu {
+    margin: 10px;
+    position: relative;
+    z-index: 5;
+    right: 0;
+    background-color: transparent;
+  }
+  
+  .icono-menu.active {
+    transform: translate(0px);
+    background-color: #fbfbfb;
+    transition: all 1s ease;
+  }
+  
+  .icono-menu span {
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: black;
+    transition: transform 0.3s;
+    margin: 10px 0;
+    border-radius: 30px;
+  }
+  
+  .icono-menu.active span:nth-child(1) {
+    transform: translateY(14px) rotate(45deg);
+  }
+  
+  .icono-menu.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .icono-menu.active span:nth-child(3) {
+    transform: translateY(-14px) rotate(-45deg);
+  }
+  
+  /* Estilos para el contenedor del menú */
+  .cont-menu {
+    background-color: var(--color-text-light);
+    box-shadow: -100px 0px 60px 0px rgba(66, 66, 66, 0.6);
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: -500px;
+    transition: all 0.7s ease;
+    margin-top: 85px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Estilos para el listado del menú */
+  .cont-menu ul {
+    display: flex;
+    margin: 10px 0 100px 0;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .cont-menu ul li {
+    /*color: black;*/
+    display: block;
+    font-size: 25px;
+    text-decoration: none;
+  }
+  
+  .cont-menu ul li.active {
+    transform: translate(0);
+    background-color: #e7aa26;
+  }
+  
+  .cont-menu ul li.active a {
+    color: #fbfbfb;
+  }
+  
+  /* Estilos por agregar en JavaScript */
+  .active {
+    transform: translate(-485px);
+  }
+  
+  .opacity {
+    transition: all 0.5s ease;
+  }
+  /* -------------------------------------
+          END     Header
+  --------------------------------------*/
 
     .join {
         justify-content: center;

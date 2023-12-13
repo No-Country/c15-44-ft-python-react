@@ -13,15 +13,35 @@
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="shortcut icon" type="image/icon" href="assets/img/icon.jpg">
-	<script src="./js/main.js" defer></script>
-	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+	<script src="./src/main.js" defer></script>
 </head>
 
 <body>
-	<header>
+	<header class="container">
 		<nav>
+		  <div>
 			<h2 class="logo">Entertain<span>Echo</span></h2>
-			<ul class="menu-screen">
+		  </div>
+		  <div class="menu-mobile">
+			<div class="icono-menu" id="icono-menu">
+			  <span></span>
+			  <span></span>
+			  <span></span>
+			</div>
+			<div class="cont-menu">
+			  <ul>
+				<li><a href="#home">Inicio</a></li>
+				<li><a href="#events">Eventos</a></li>
+				<li><a href="#funciona">¿Como funciona?</a></li>
+				<li><a href="#explore">Explorar</a></li>
+				<li><a href="#reviews">Opiniones</a></li>
+				<li><a href="#blog">Blog</a></li>
+				<li><a href="#contacto">Contacto</a></li>
+			  </ul>
+			</div>
+		  </div>
+		  <div class="menu-desktop">
+			<ul>
 				<li><a href="#home">Inicio</a></li>
 				<li><a href="#events">Eventos</a></li>
 				<li><a href="#funciona">¿Como funciona?</a></li>
@@ -30,10 +50,9 @@
 				<li><a href="#blog">Blog</a></li>
 				<li><a href="#contacto">Contacto</a></li>
 			</ul>
-			
-		</nav>
-	</header>
-	<section class="join">
+		  </div>
+	  </header>
+	<!-- <section class="join">
 		<div>
 			<a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
 		</div>
@@ -43,7 +62,7 @@
 		<div>
 			<a href="./pages/register.html">Registrarse</a>
 		</div>
-	</section>
+	</section> -->
 	<section id="home" class="welcome">
 		<div class="container">
 			<div class="welcome-txt">
@@ -247,7 +266,7 @@
 		</div>
 		<div class="reviews-content">
 			<div class="testimonial-carousel slider">
-				<div class="single-testimonial-box slide active">
+				<div class="single-testimonial-box slide">
 					<div class="testimonial-description">
 						<div class="testimonial-info">
 							<div class="testimonial-img">
