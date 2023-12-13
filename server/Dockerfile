@@ -3,15 +3,15 @@ FROM python:3.11.5
 WORKDIR /server
 
 # Copy only the necessary files for dependency installation
-COPY . /server/
 COPY pyproject.toml pdm.lock /server/
+COPY . /server/
 
 # Install pdm
 RUN python -m pip install --upgrade pip && \
     python -m pip install pdm
 
-# List the contents of the /server directory
-RUN ls -la /server
+# Check if pyproject.toml exists, if not, run pdm init
+RUN if [ ! -f pyproject.toml ]; then pdm init -n; fi
 
 # Install project dependencies
 RUN pdm install
@@ -20,4 +20,4 @@ RUN pdm install
 EXPOSE 8000
 
 # Command to run the application
-CMD ["cd /server && pdm", "run start", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["pdm", "run start", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
