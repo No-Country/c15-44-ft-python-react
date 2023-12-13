@@ -1,14 +1,15 @@
+# build stage
 FROM python:3.11.5
 
-WORKDIR /server
+# Install pdm
+RUN pip install --upgrade pip
+RUN pip install pdm
 
 # Copy only the necessary files for dependency installation
 COPY pyproject.toml pdm.lock /server/
 COPY . /server/
 
-# Install pdm
-RUN python -m pip install --upgrade pip && \
-    python -m pip install pdm
+WORKDIR /server
 
 # Check if pyproject.toml exists, if not, run pdm init
 RUN [ ! -f pyproject.toml ] && pdm init -n || true
@@ -20,4 +21,4 @@ RUN pdm install
 EXPOSE 8000
 
 # Command to run the application
-CMD ["ls && ","pdm", "run start", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["pdm", "run start", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
