@@ -1,6 +1,12 @@
 # build stage
 FROM python:3.11.5
 
+# Add a non-root user
+RUN useradd -m myuser
+USER myuser
+
+WORKDIR /server
+
 # Install pdm
 RUN pip install --upgrade pip
 RUN pip install pdm
@@ -15,7 +21,7 @@ WORKDIR /server
 RUN [ ! -f pyproject.toml ] && pdm init -n || true
 
 # Remove existing pdm.lock
-RUN rm -f pdm.lock
+#RUN rm -f pdm.lock
 
 # Install project dependencies
 RUN pdm install
@@ -25,5 +31,12 @@ RUN pdm install
 # Expose the port your app runs on
 EXPOSE 8000
 
+WORKDIR /server
+
 # Command to run the application
-CMD ["pdm", "run", "start"]
+CMD ["./server/pdm", "run", "start"]
+
+#CMD ["pdm", "run", "start"]
+
+## Command to run the application
+#CMD ["sh", "-c", "pdm run start --host 0.0.0.0 --port 8000 --reload"]

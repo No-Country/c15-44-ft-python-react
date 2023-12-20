@@ -1,6 +1,8 @@
 from contextlib import asynccontextmanager
+from uvicorn import Config, Server
 
 from fastapi import FastAPI
+from fastapi.logger import logger as fastapi_logger
 
 import events.api as events_api
 import localizations.api as localization_api
@@ -12,7 +14,9 @@ from auth import register_auth_routers
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    fastapi_logger.info("Initializing database")
     init_db()
+    fastapi_logger.info("Database initialization complete")
     yield
 
 
@@ -26,5 +30,24 @@ def create_app():
 
     return app
 
+#checar si rompe borrar
+def run():
+    app = create_app()
 
-app = create_app()
+    # Set up Uvicorn configuration for enhanced logging
+    config = Config(app, log_level="info", reload=True)
+
+    # Create the Uvicorn server
+    server = Server(config)
+
+    # Start the server
+    fastapi_logger.info("Starting Uvicorn server")
+    server.run()
+
+
+# If the script is executed directly, run the FastAPI application
+if __name__ == "__main__":
+    run()
+
+
+#app = create_app()
