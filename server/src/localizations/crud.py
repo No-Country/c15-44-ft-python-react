@@ -3,7 +3,7 @@ from http import HTTPStatus
 from sqlmodel import Session, select, func, delete
 from sqlalchemy import Engine
 from .models import Country, Province
-from db import engine
+from src.db import engine
 
 #all countries - no provinces
 async def get_countries():

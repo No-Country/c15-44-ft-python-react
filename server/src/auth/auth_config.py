@@ -10,7 +10,7 @@ from fastapi_users.fastapi_users import FastAPIUsers
 from .users import get_user_manager
 from .models import User
 
-from config import get_settings
+from src.config import get_settings
 
 settings = get_settings()
 

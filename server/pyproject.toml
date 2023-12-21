@@ -22,7 +22,7 @@ readme = "README.md"
 license = { text = "MIT" }
 
 [tool.pdm.scripts]
-start.cmd = "uvicorn main:app --reload"
+start.cmd = "uvicorn src.main:app --reload"
 start.env = { PYTHONPATH = "./src" }
 lint = "pdm run ruff"
 format = "pdm run black"

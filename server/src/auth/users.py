@@ -7,7 +7,7 @@ from fastapi_users_db_sqlmodel import SQLModelUserDatabase
 from .models import User
 from .dependencies import get_user_db
 
-from config import get_settings
+from src.config import get_settings
 
 settings = get_settings()
 

@@ -3,7 +3,7 @@ version: "3.8"
 services:
   app:
     build:
-      context: ./server/app # Update the path to your FastAPI app directory
+      context: ./server # Update the path to your FastAPI app directory
       dockerfile: Dockerfile
     container_name: my_fastapi_app
     ports:
@@ -13,8 +13,8 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=mydatabase
-      - SQLALCHEMY_DATABASE_URI="postgresql+psycopg://postgres:postgres@db/web_dev"
+      - POSTGRES_DB=web_dev
+      - SQLALCHEMY_DATABASE_URI="postgresql+psycopg://postgres:postgres@db:5432/web_dev"
 
   db:
     build:

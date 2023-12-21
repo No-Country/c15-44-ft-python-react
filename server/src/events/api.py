@@ -1,7 +1,7 @@
 from fastapi import APIRouter, status
 
-from events import crud
-from events.schemas import CreateEvent, ResponseEvent
+from . import crud
+from .schemas import CreateEvent, ResponseEvent
 from .models import Event
 
 router = APIRouter(prefix="/events", tags=["events"])
@@ -43,7 +43,7 @@ async def get_eventimg(event_id: int):
     return imagesurl
 
 
-@router.post("/", response_model=ResponseEvent, status_code=status.HTTP_201_CREATED)
+@router.post("/", response_model=Event, status_code=status.HTTP_201_CREATED)
 async def create_event(event: Event):
     eventc = await crud.create_event(event)
     return eventc
