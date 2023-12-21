@@ -13,27 +13,47 @@
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="shortcut icon" type="image/icon" href="assets/img/icon.jpg">
-	<script src="./js/main.js" defer></script>
-	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+	<script src="./src/main.js" defer></script>
 </head>
 
 <body>
-	<header>
+	<header class="container">
 		<nav>
-			<h2 class="logo">Entertain<span>Echo</span></h2>
-			<ul class="menu-screen">
-				<li><a href="#home">Inicio</a></li>
-				<li><a href="#events">Eventos</a></li>
-				<li><a href="#funciona">¿Como funciona?</a></li>
-				<li><a href="#explore">Explorar</a></li>
-				<li><a href="#reviews">Opiniones</a></li>
-				<li><a href="#blog">Blog</a></li>
-				<li><a href="#contacto">Contacto</a></li>
-			</ul>
-			
+			<div>
+				<h2 class="logo">Entertain<span>Echo</span></h2>
+			</div>
+			<div class="menu-mobile">
+				<div class="icono-menu" id="icono-menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="cont-menu">
+					<ul>
+						<li><a href="#home">Inicio</a></li>
+						<li><a href="#events">Eventos</a></li>
+						<li><a href="#funciona">¿Como funciona?</a></li>
+						<li><a href="#explore">Explorar</a></li>
+						<li><a href="#reviews">Opiniones</a></li>
+						<li><a href="#blog">Blog</a></li>
+						<li><a href="#contacto">Contacto</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="menu-desktop">
+				<ul>
+					<li><a href="#home">Inicio</a></li>
+					<li><a href="#events">Eventos</a></li>
+					<li><a href="#funciona">¿Como funciona?</a></li>
+					<li><a href="#explore">Explorar</a></li>
+					<li><a href="#reviews">Opiniones</a></li>
+					<li><a href="#blog">Blog</a></li>
+					<li><a href="#contacto">Contacto</a></li>
+				</ul>
+			</div>
 		</nav>
 	</header>
-	<section class="join">
+	<!-- <section class="join">
 		<div>
 			<a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
 		</div>
@@ -43,7 +63,7 @@
 		<div>
 			<a href="./pages/register.html">Registrarse</a>
 		</div>
-	</section>
+	</section> -->
 	<section id="home" class="welcome">
 		<div class="container">
 			<div class="welcome-txt">
@@ -52,10 +72,55 @@
 					¡Encuéntra tu espectáculo, tu elección: eventos a medida con un clic!.
 				</p>
 			</div>
-			<div class="welcome-search-box">
+			<section id="events" class="events-types">
+				<h2>Tipos de Eventos</h2>
+				<section class="cards">
+					<div class="card">
+						<i class="fa-solid fa-utensils fa-2xl"></i>
+						<h5>Culinarios</h5>
+						<p>Come en los mejores lugares y vivi nuevas experiencias.</p>
+					</div>
+					<div class="card">
+						<i class="fa-solid fa-film fa-2xl"></i>
+						<h5>Cine</h5>
+						<p>Filmes clasicos, contemporaneos y autocine.</p>
+					</div>
+					<div class="card">
+						<i class="fa-solid fa-music fa-2xl"></i>
+						<h5>Música</h5>
+						<p>Shows de música para todo los gustos, rock, indie y mas.</p>
+					</div>
+					<div class="card">
+						<i class="fa-solid fa-masks-theater fa-2xl"></i>
+						<h5>Teatro</h5>
+						<p>Obras de teatro musicales, drama, monólogo, tragicomedia y mas.</p>
+					</div>
+					<div class="card">
+						<i class="fa-solid fa-palette fa-2xl"></i>
+						<h5>Ártes</h5>
+						<p>Exposiciones de Arte. Muestras, talleres recreativos y mucho mas.</p>
+					</div>
+					<div class="card">
+						<i class="fa-solid fa-face-grin-squint-tears fa-2xl"></i>
+						<h5>StandUp</h5>
+						<p>Shows de comedia, mira a tus preferidos o encontra nuevos comediantes.</p>
+					</div>
+					<div class="card">
+						<i class="fa-solid fa-drum fa-2xl"></i>
+						<h5>Sinfónicas</h5>
+						<p>Orquestas Sinfónicas, Liricas y mas.</p>
+					</div>
+					<div class="card">
+						<i class="fa-solid fa-car-on fa-2xl"></i>
+						<h5>SoundCars</h5>
+						<p>Sound Car para fanáticos del automovilismo y sonido.</p>
+					</div>
+				</section>
+			</section>
+			<!-- <div class="welcome-search-box">
 				<div class="search-box">
 					<form action="#">
-						<label for="#">¿Que buscas?</label>
+						<label for="#">Tipo de Evento</label>
 						<input id="#" type="text" placeholder=" Ej: Parque, Teatro, Plaza...">
 						<label for="%">Ubicación</label>
 						<input id="%" type="text" placeholder=" Ej: Londres, Nueva York...">
@@ -67,81 +132,23 @@
 					</button>
 				</div>
 			</div>
+			<div>
+				<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=UTC&showTitle=0&showPrint=0&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZDA3OWQ1YjZiMWIyZDEzY2I5NDI4ZjMzMzk2MjYxNTg3MmMwYThiNWQ5Njg5NWJmNjZhNGFmOWUwMzA3OTQwOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%2333B679&color=%234285F4" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+			</div> -->
 		</div>
 
 	</section>
-	<section id="events" class="events-types">
-		<h2>Tipos de Eventos</h2>
-		<section class="cards">
-			<div class="card">
-				<i class="fa-solid fa-utensils fa-2xl"></i>
-				<h5>Culinarios</h5>
-				<p>Breve Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, modi quam
-					aspernatur minima assumenda
-					at illo doloremque.</p>
-			</div>
-			<div class="card">
-				<i class="fa-solid fa-film fa-2xl"></i>
-				<h5>Cine</h5>
-				<p>Breve Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, modi quam
-					aspernatur minima assumenda
-					at illo doloremque.</p>
-			</div>
-			<div class="card">
-				<i class="fa-solid fa-music fa-2xl"></i>
-				<h5>Música</h5>
-				<p>Breve Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, modi quam
-					aspernatur minima assumenda
-					at illo doloremque.</p>
-			</div>
-			<div class="card">
-				<i class="fa-solid fa-masks-theater fa-2xl"></i>
-				<h5>Teatro</h5>
-				<p>Breve Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, modi quam
-					aspernatur minima assumenda
-					at illo doloremque.</p>
-			</div>
-			<div class="card">
-				<i class="fa-solid fa-palette fa-2xl"></i>
-				<h5>Ártes</h5>
-				<p>Breve Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, modi quam
-					aspernatur minima assumenda
-					at illo doloremque.</p>
-			</div>
-			<div class="card">
-				<i class="fa-solid fa-face-grin-squint-tears fa-2xl"></i>
-				<h5>StandUp</h5>
-				<p>Breve Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, modi quam
-					aspernatur minima assumenda
-					at illo doloremque.</p>
-			</div>
-			<div class="card">
-				<i class="fa-solid fa-drum fa-2xl"></i>
-				<h5>Sinfónicas</h5>
-				<p>Breve Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, modi quam
-					aspernatur minima assumenda
-					at illo doloremque.</p>
-			</div>
-			<div class="card">
-				<i class="fa-solid fa-car-on fa-2xl"></i>
-				<h5>SoundCars</h5>
-				<p>Breve Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, modi quam
-					aspernatur minima assumenda
-					at illo doloremque.</p>
-			</div>
-		</section>
-	</section>
+
 	<section id="funciona">
 		<div class="section-plan">
-			<h2>¿Como funciona?</h2>
+			<h2>¿Cómo funciona?</h2>
 			<p>Aprende más sobre cómo funciona nuestro sitio web.</p>
 			<div class="container-plan">
 				<div>
 					<i class="fa-regular fa-lightbulb fa-2xl"></i>
 					<h3>Elige un plan.</h3>
 					<p>
-						Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt
-						ut laboremagna aliqua.
+						Promociona tus eventos sin limite.
 					</p>
 					<a class="btn-funtion" onclick="window.location.href='#'">Leer más</a>
 				</div>
@@ -149,8 +156,7 @@
 					<i class="fa-solid fa-binoculars fa-2xl"></i>
 					<h3>Encuentra lo que quieres.</h3>
 					<p>
-						Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt
-						ut laboremagna aliqua.
+						Los eventos de tu ciudad a un clic.
 					</p>
 					<a class="btn-funtion" onclick="window.location.href='#'">Leer más</a>
 				</div>
@@ -158,88 +164,27 @@
 					<i class="fa-solid fa-location-dot fa-2xl"></i>
 					<h3>Explora increíbles lugares.</a></h3>
 					<p>
-						Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt
-						ut laboremagna aliqua.
+						Increibles oportunidades de ocio para ti y tus amigos.
 					</p>
 					<a class="btn-funtion" onclick="window.location.href='#'">Leer más</a>
 				</div>
 			</div>
 		</div>
 	</section>
+
 	<section id="explore" class="explore">
 		<div class="container">
 			<div class="section-header">
-				<h2>Explora</h2>
-				<p>Conoce nuevas artes, músicas, culturas, lugares...</p>
+			<h2>Explora</h2>
+			<p>Conoce nuevas artes, músicas, culturas, lugares...</p>
 			</div><!--/.section-header-->
 			<div class="explore-content">
-				<div class="sites">
-					<img src="./assets/img/d1.jpg" alt="la puerta roja">
-					<h5>La Puerta Roja - Buenos Aires</h5>
-					<p>Breve Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, modi
-						quam
-						aspernatur minima assumenda
-						at illo doloremque.</p>
-				</div>
-				<div class="sites">
-					<img src="./assets/img/d2.jpg" alt="Andrés Carne de Res">
-					<h5>Andrés Carne de Res - Bogotá</h5>
-					<p>Breve Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, modi
-						quam
-						aspernatur minima assumenda
-						at illo doloremque.</p>
-				</div>
-				<div class="sites">
-					<img src="./assets/img/d3.jpg" alt="Teatro Colón">
-					<h5>Teatro Colón - Bogotá</h5>
-					<p>Breve Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, modi
-						quam
-						aspernatur minima assumenda
-						at illo doloremque.</p>
-				</div>
-				<div class="sites">
-					<img src="./assets/img/d8.jpg" alt="Centro Parque">
-					<h5>Centro Parque - Chile</h5>
-					<p>Breve Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, modi
-						quam
-						aspernatur minima assumenda
-						at illo doloremque.</p>
-				</div>
-				<div class="sites">
-					<img src="./assets/img/d4.jpg" alt="Teatro San Martín">
-					<h5>Teatro San Martín - Buenos Aires</h5>
-					<p>Breve Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, modi
-						quam
-						aspernatur minima assumenda
-						at illo doloremque.</p>
-				</div>
-				<div class="sites">
-					<img src="./assets/img/d5.jpg" alt="Luna Park">
-					<h5>Luna Park - Buenos Aires</h5>
-					<p>Breve Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, modi
-						quam
-						aspernatur minima assumenda
-						at illo doloremque.</p>
-				</div>
-				<div class="sites">
-					<img src="./assets/img/d6.jpg" alt="Estadio Metropolitano">
-					<h5>Estadio Metropolitano - Barranquilla</h5>
-					<p>Breve Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, modi
-						quam
-						aspernatur minima assumenda
-						at illo doloremque.</p>
-				</div>
-				<div class="sites">
-					<img src="./assets/img/d7.jpg" alt="Hotel O'Higgins">
-					<h5>Hotel O'Higgins - Viña de Mar</h5>
-					<p>Breve Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, modi
-						quam
-						aspernatur minima assumenda
-						at illo doloremque.</p>
-				</div>
+			<!-- Content will be dynamically generated by JavaScript -->
 			</div>
 		</div>
 	</section>
+
+
 	<section id="reviews" class="reviews">
 		<div class="section-header">
 			<h2>Reseñas de nuestros afiliados</h2>
@@ -247,15 +192,15 @@
 		</div>
 		<div class="reviews-content">
 			<div class="testimonial-carousel slider">
-				<div class="single-testimonial-box slide active">
+				<div class="single-testimonial-box slide activate">
 					<div class="testimonial-description">
 						<div class="testimonial-info">
 							<div class="testimonial-img">
 								<img src="assets/img/c1.png" alt="clients">
 							</div>
 							<div class="testimonial-person">
-								<h2>Tom Leakar</h2>
-								<h4>london, UK</h4>
+								<h2>Andrés Cuccittini</h2>
+								<h4>Rosario, Argentina</h4>
 								<div class="testimonial-person-star">
 									<i class="fa-solid fa-star"></i>
 									<i class="fa-solid fa-star"></i>
@@ -267,8 +212,7 @@
 						</div>
 						<div class="testimonial-comment">
 							<p>
-								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-								mollit anim id est laborum. Sed ut perspiciatis eaque.
+								Fuimo al Metropolitano en Barranquilla la pasamo de 10.
 							</p>
 						</div><!--/.testimonial-comment-->
 					</div><!--/.testimonial-description-->
@@ -280,8 +224,8 @@
 								<img src="assets/img/c2.png" alt="clients">
 							</div><!--/.testimonial-img-->
 							<div class="testimonial-person">
-								<h2>monirul islam</h2>
-								<h4>london, UK</h4>
+								<h2>Pablo Perez</h2>
+								<h4>Mar de Plata, Argentina</h4>
 								<div class="testimonial-person-star">
 									<i class="fa-solid fa-star"></i>
 									<i class="fa-solid fa-star"></i>
@@ -293,8 +237,7 @@
 						</div><!--/.testimonial-info-->
 						<div class="testimonial-comment">
 							<p>
-								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-								mollit anim id est laborum. Sed ut perspiciatis eaque.
+								Fuimos al teatro colon y se nos hizo muy facil mediante la página.
 							</p>
 						</div><!--/.testimonial-comment-->
 					</div><!--/.testimonial-description-->
@@ -306,8 +249,8 @@
 								<img src="assets/img/c3.png" alt="clients">
 							</div><!--/.testimonial-img-->
 							<div class="testimonial-person">
-								<h2>Shohrab Hossain</h2>
-								<h4>london, UK</h4>
+								<h2>Jaime Hossain</h2>
+								<h4>Bogota, Colombia</h4>
 								<div class="testimonial-person-star">
 									<i class="fa-solid fa-star"></i>
 									<i class="fa-solid fa-star"></i>
@@ -319,8 +262,7 @@
 						</div><!--/.testimonial-info-->
 						<div class="testimonial-comment">
 							<p>
-								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-								mollit anim id est laborum. Sed ut perspiciatis eaque.
+								Visitamos el teatro colón.
 							</p>
 						</div><!--/.testimonial-comment-->
 					</div><!--/.testimonial-description-->
@@ -332,8 +274,8 @@
 								<img src="assets/img/c4.png" alt="clients">
 							</div><!--/.testimonial-img-->
 							<div class="testimonial-person">
-								<h2>Tom Leakar</h2>
-								<h4>london, UK</h4>
+								<h2>Leonard Smith</h2>
+								<h4>Santiago, Chile</h4>
 								<div class="testimonial-person-star">
 									<i class="fa-solid fa-star"></i>
 									<i class="fa-solid fa-star"></i>
@@ -345,8 +287,7 @@
 						</div><!--/.testimonial-info-->
 						<div class="testimonial-comment">
 							<p>
-								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-								mollit anim id est laborum. Sed ut perspiciatis eaque.
+								Muy buena la estadia en el Hotel O'Higgins, no habia nadie.
 							</p>
 						</div><!--/.testimonial-comment-->
 					</div><!--/.testimonial-description-->
@@ -359,7 +300,7 @@
 							</div><!--/.testimonial-img-->
 							<div class="testimonial-person">
 								<h2>Tom Leakar</h2>
-								<h4>london, UK</h4>
+								<h4>Caracas, Venezuela</h4>
 								<div class="testimonial-person-star">
 									<i class="fa-solid fa-star"></i>
 									<i class="fa-solid fa-star"></i>
@@ -371,8 +312,7 @@
 						</div><!--/.testimonial-info-->
 						<div class="testimonial-comment">
 							<p>
-								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-								mollit anim id est laborum. Sed ut perspiciatis eaque.
+								Fuimos a ver un show al Luna Park que encontramos aqui.
 							</p>
 						</div><!--/.testimonial-comment-->
 					</div><!--/.testimonial-description-->
@@ -384,8 +324,8 @@
 								<img src="assets/img/c2.png" alt="clients">
 							</div><!--/.testimonial-img-->
 							<div class="testimonial-person">
-								<h2>monirul islam</h2>
-								<h4>london, UK</h4>
+								<h2>Leandro Paredes</h2>
+								<h4>Buenos Aires, Argentina</h4>
 								<div class="testimonial-person-star">
 									<i class="fa-solid fa-star"></i>
 									<i class="fa-solid fa-star"></i>
@@ -397,8 +337,7 @@
 						</div><!--/.testimonial-info-->
 						<div class="testimonial-comment">
 							<p>
-								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-								mollit anim id est laborum. Sed ut perspiciatis eaque.
+								Vimos el partido de la 21.
 							</p>
 						</div><!--/.testimonial-comment-->
 					</div><!--/.testimonial-description-->
@@ -423,8 +362,7 @@
 						</div><!--/.testimonial-info-->
 						<div class="testimonial-comment">
 							<p>
-								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-								mollit anim id est laborum. Sed ut perspiciatis eaque.
+								Great website, easy to find things to do when abroad.
 							</p>
 						</div><!--/.testimonial-comment-->
 					</div><!--/.testimonial-description-->
@@ -436,8 +374,8 @@
 								<img src="assets/img/c4.png" alt="clients">
 							</div><!--/.testimonial-img-->
 							<div class="testimonial-person">
-								<h2>Tom Leakar</h2>
-								<h4>london, UK</h4>
+								<h2>Raymodn Bradley</h2>
+								<h4>Viña del Mar, Chile</h4>
 								<div class="testimonial-person-star">
 									<i class="fa-solid fa-star"></i>
 									<i class="fa-solid fa-star"></i>
@@ -449,8 +387,7 @@
 						</div><!--/.testimonial-info-->
 						<div class="testimonial-comment">
 							<p>
-								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-								mollit anim id est laborum. Sed ut perspiciatis eaque.
+								Encontramos un viñedo para ir con amigos.
 							</p>
 						</div><!--/.testimonial-comment-->
 					</div><!--/.testimonial-description-->
@@ -460,8 +397,120 @@
 
 	</section>
 
+	<section id="statistics" class="statistics">
+		<div class="container">
+			<div class="statistics-counter">
+				<div class="col-md-3 col-sm-6">
+					<div class="single-ststistics-box">
+						<div class="statistics-content">
+							<div class="counter">90 </div> <span>K+</span>
+						</div><!--/.statistics-content-->
+						<h3>Anuncios</h3>
+					</div><!--/.single-ststistics-box-->
+				</div><!--/.col-->
+				<div class="col-md-3 col-sm-6">
+					<div class="single-ststistics-box">
+						<div class="statistics-content">
+							<div class="counter">40</div> <span>k+</span>
+						</div><!--/.statistics-content-->
+						<h3>Categorías</h3>
+					</div><!--/.single-ststistics-box-->
+				</div><!--/.col-->
+				<div class="col-md-3 col-sm-6">
+					<div class="single-ststistics-box">
+						<div class="statistics-content">
+							<div class="counter">65</div> <span>k+</span>
+						</div><!--/.statistics-content-->
+						<h3>Visitantes</h3>
+					</div><!--/.single-ststistics-box-->
+				</div><!--/.col-->
+				<div class="col-md-3 col-sm-6">
+					<div class="single-ststistics-box">
+						<div class="statistics-content">
+							<div class="counter">50</div> <span>k+</span>
+						</div><!--/.statistics-content-->
+						<h3>Clientes satisfechos</h3>
+					</div><!--/.single-ststistics-box-->
+				</div><!--/.col-->
+			</div><!--/.statistics-counter-->
+		</div><!--/.container-->
+
+	</section>
 
 
+	<section id="blog" class="blog">
+		<div class="container-blog">
+			<div class="section-header">
+				<h2>Noticias y Articulos</h2>
+				<p>Siempre actualizado con nuestras últimas noticias y artículos.</p>
+			</div>
+
+			<div class="blog-content">
+				<div class="single-blog-item-txt">
+					<h2><a href="#">Crea tu evento fácilmente.</a></h2>
+					<img src="assets/img/a1.jpg" alt="blog image">
+					<h4>posted <span>by</span> <a href="#">admin</a> Agosto 2022</h4>
+					<p>
+						Eventos faciles de crear.
+					</p>
+				</div>
+				<div class="single-blog-item-txt">
+					<h2><a href="#">Organiza tus actividades</a></h2>
+					<img src="assets/img/a2.jpg" alt="blog image">
+
+					<h4>posted <span>by</span> <a href="#">admin</a> Agosto 2022</h4>
+					<p>
+						Organiza actividades con tu pareja o amigos.
+					</p>
+				</div>
+				<div class="single-blog-item-txt">
+					<h2><a href="#">Encuentra tu lugar deseado</a></h2>
+					<img src="assets/img/a3.jpg" alt="blog image">
+
+					<h4>posted <span>by</span> <a href="#">admin</a> Agosto 2022</h4>
+					<p>
+						Cientos de lugares para visitar en tu ciudad.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		</div>
+		</div>
+		</div><!--/.container-->
+
+	</section>
+
+	<footer>
+		<div class="footer-content">
+			<div class="footer-cards">
+				<h5>About Us</h5>
+				<p>Nos centramos en que puedas encontrar lo que buscas en un solo lugar.</p>
+			</div>
+			<div class="footer-cards">
+				<h5>Contact Us</h5>
+				<p>info@entertainecho.com.</p>
+			</div>
+			<div class="footer-cards">
+				<h5>Newsletter</h5>
+				<form action="#">
+					<input type="email" class="footer-input" id="email" placeholder=" Enter yout email">
+					<input type="submit" class="submit-input" value="SUSCRIBE" class="contact-btn">
+				</form>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="footer-logo">
+				<h2 class="logo">Entertain<span>Echo</span></h2>
+				<div class="social-icons">
+					<a href="#"><i class="fa-brands fa-facebook"></i></a>
+					<a href="#"><i class="fa-brands fa-twitter"></i></a>
+					<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+					<a href="#"><i class="fa-brands fa-instagram"></i></a>
+				</div>
+			</div>
+			<p>© 2023 all right reserved. Desing c15-44-ft-python-react</p>
+		</div>
+	</footer>
 </body>
-
 </html>
