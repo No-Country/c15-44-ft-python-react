@@ -3,7 +3,7 @@ version: "3.8"
 services:
   app:
     build:
-      context: ./server/app # Update the path to your FastAPI app directory
+      context: ./server # Update the path to your FastAPI app directory
       dockerfile: Dockerfile
     container_name: my_fastapi_app
     ports:
