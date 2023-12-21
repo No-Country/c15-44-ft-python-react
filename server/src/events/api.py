@@ -43,7 +43,7 @@ async def get_eventimg(event_id: int):
     return imagesurl
 
 
-@router.post("/", response_model=ResponseEvent, status_code=status.HTTP_201_CREATED)
+@router.post("/", response_model=Event, status_code=status.HTTP_201_CREATED)
 async def create_event(event: Event):
     eventc = await crud.create_event(event)
     return eventc

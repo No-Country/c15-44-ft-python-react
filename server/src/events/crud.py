@@ -85,7 +85,17 @@ async def get_event_images(event_id: int):
 async def create_event(event):
     try:
         with Session(engine) as session:
-            new_event=Event(name=event.name)
+            new_event = Event(
+                name=event.name,
+                creator_id=event.creator_id,
+                timestamp=event.timestamp,
+                date_and_time=event.date_and_time,
+                country_id=event.country_id,
+                province_id=event.province_id,
+                address=event.address,
+                price=event.price,
+                category_id=event.category_id,
+            )
             session.add(new_event)
             session.commit()
             session.refresh(new_event)
