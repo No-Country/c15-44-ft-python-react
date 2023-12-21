@@ -1,7 +1,7 @@
 from fastapi import APIRouter, status
 
-from events import crud
-from events.schemas import CreateEvent, ResponseEvent
+from . import crud
+from .schemas import CreateEvent, ResponseEvent
 from .models import Event
 
 router = APIRouter(prefix="/events", tags=["events"])

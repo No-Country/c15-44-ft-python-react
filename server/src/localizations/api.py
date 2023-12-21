@@ -1,8 +1,8 @@
 from typing import List
 
 from fastapi import APIRouter, status, Depends
-from localizations import crud
-from localizations.schemas import ResponseProvince, CreateCountry
+from . import crud
+from .schemas import ResponseProvince, CreateCountry
 from .models import Province, Country
 
 router = APIRouter(prefix="/localization", tags=["localization"])

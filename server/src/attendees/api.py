@@ -1,6 +1,6 @@
 from fastapi import APIRouter, status
 
-from events import crud
+from . import crud
 from .models import EventAttendees
 
 router = APIRouter(prefix="/attendees", tags=["attendees"])

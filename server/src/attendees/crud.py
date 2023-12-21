@@ -1,7 +1,7 @@
 from .models import EventAttendees
 from fastapi import HTTPException, status
 from sqlmodel import Session,select, delete
-from db import engine
+from src.db import engine
 
 async def get_attendees_by_event(event_id):
     with Session(engine) as session:

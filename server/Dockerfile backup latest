@@ -2,26 +2,32 @@
 FROM python:3.11.5
 
 # Set environment variables
-#ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED 1
+
+# Add a non-root user
+RUN useradd -m myuser
+USER myuser
 
 # Set the working directory in the container
-#WORKDIR /server
+WORKDIR /server
 
-WORKDIR /server/
 
 # Install project dependencies using pip
-COPY /requirements.txt /server/requirements.txt
+COPY requirements.txt /server/
+COPY . /server/
 
-RUN pip install --no-cache-dir --upgrade -r ./requirements.txt
-
-COPY . .
+WORKDIR /server
+#RUN pip install fastapi uvicorn
+RUN pip install fastapi
+RUN pip install uvicorn
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the port your app runs on
-#EXPOSE 8000
+EXPOSE 8000
 
-#ENV PATH="./server/:${PATH}"
+ENV PATH="./server/:${PATH}"
 
 # Command to run the application
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000" ,"--reload"]
+CMD ["uvicorn", "server.src.main:app", "--reload"]
 #CMD ["uvicorn", "server.src.main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
 #CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

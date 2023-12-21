@@ -1,7 +1,7 @@
 from .models import Event, EventImg
 from fastapi import HTTPException, status
 from sqlmodel import Session,select, delete
-from db import engine
+from src.db import engine
 
 async def get_all_events(country_id):
     with Session(engine) as session:

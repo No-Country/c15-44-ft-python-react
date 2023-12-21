@@ -3,7 +3,7 @@ from fastapi_users_db_sqlmodel import SQLModelUserDatabase
 from sqlalchemy import Engine
 from sqlmodel import Session
 
-from db import get_engine
+from src.db import get_engine
 
 from .models import User
 
