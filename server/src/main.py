@@ -31,6 +31,7 @@ def create_app():
         "https://18.231.163.164:8000/",
         "http://18.231.163.164:80/"
         "https://18.231.163.164:80/",
+        "https://c15-44-ft-python-react-3hd3v2nlp-nahuel-casagrandes-projects.vercel.app"
         # Add more origins as needed
     ]
 
