@@ -51,7 +51,7 @@ setInterval(() => {
 }, 5000);
 
 // Code for fetching events from the API
-const apiUrl = "/events/?country_id=1";
+const apiUrl = "http://18.231.163.164:8000/events/?country_id=1";
 
 fetch(apiUrl, { method: "GET", port: 8000 })
   .then((response) => response.json())
