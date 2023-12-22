@@ -31,5 +31,15 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
 
+  frontend:
+    build:
+      context: ./client # Update the path to your frontend project directory
+      dockerfile: Dockerfile
+    container_name: my_frontend_app
+    ports:
+      - "80:80" # Expose the port based on the Nginx configuration
+    depends_on:
+      - app
+
 volumes:
   db-data:
