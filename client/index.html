@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>EntertainEcho</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+		integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+		integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" type="image/icon" href="assets/img/icon.jpg">
+	<script src="./src/main.js" defer></script>
+</head>
+
+<body>
+	<header class="container">
+		<nav>
+			<div>
+				<h2 class="logo">Entertain<span>Echo</span></h2>
+			</div>
+			<div class="menu-mobile">
+				<div class="icono-menu" id="icono-menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="cont-menu">
+					<ul>
+						<li><a href="#home">Inicio</a></li>
+						<li><a href="#events">Eventos</a></li>
+						<li><a href="#funciona">¿Como funciona?</a></li>
+						<li><a href="#explore">Explorar</a></li>
+						<li><a href="#reviews">Opiniones</a></li>
+						<li><a href="#blog">Blog</a></li>
+						<li><a href="#contacto">Contacto</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="menu-desktop">
+				<ul>
+					<li><a href="#home">Inicio</a></li>
+					<li><a href="#events">Eventos</a></li>
+					<li><a href="#funciona">¿Como funciona?</a></li>
+					<li><a href="#explore">Explorar</a></li>
+					<li><a href="#reviews">Opiniones</a></li>
+					<li><a href="#blog">Blog</a></li>
+					<li><a href="#contacto">Contacto</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- <section class="join">
+		<div>
+			<a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+		</div>
+		<div>
+			<a href="./pages/login.html">Iniciar Sesión</a>
+		</div>
+		<div>
+			<a href="./pages/register.html">Registrarse</a>
+		</div>
+	</section> -->
+	<section id="home" class="welcome">
+		<div class="container">
+			<div class="welcome-txt">
+				<h3>El mejor lugar para encontrar <br>o crear el evento que necesitas.</h3>
+				<p>
+					¡Encuéntra tu espectáculo, tu elección: eventos a medida con un clic!.
+				</p>
+			</div>
+			<section id="events" class="events-types">
+				<h2>Tipos de Eventos</h2>
+				<section class="cards">
+					<div class="card">
+						<i class="fa-solid fa-utensils fa-2xl"></i>
+						<h5>Culinarios</h5>
+						<p>Come en los mejores lugares y vivi nuevas experiencias.</p>
+					</div>
+					<div class="card">
+						<i class="fa-solid fa-film fa-2xl"></i>
+						<h5>Cine</h5>
+						<p>Filmes clasicos, contemporaneos y autocine.</p>
+					</div>
+					<div class="card">
+						<i class="fa-solid fa-music fa-2xl"></i>
+						<h5>Música</h5>
+						<p>Shows de música para todo los gustos, rock, indie y mas.</p>
+					</div>
+					<div class="card">
+						<i class="fa-solid fa-masks-theater fa-2xl"></i>
+						<h5>Teatro</h5>
+						<p>Obras de teatro musicales, drama, monólogo, tragicomedia y mas.</p>
+					</div>
+					<div class="card">
+						<i class="fa-solid fa-palette fa-2xl"></i>
+						<h5>Ártes</h5>
+						<p>Exposiciones de Arte. Muestras, talleres recreativos y mucho mas.</p>
+					</div>
+					<div class="card">
+						<i class="fa-solid fa-face-grin-squint-tears fa-2xl"></i>
+						<h5>StandUp</h5>
+						<p>Shows de comedia, mira a tus preferidos o encontra nuevos comediantes.</p>
+					</div>
+					<div class="card">
+						<i class="fa-solid fa-drum fa-2xl"></i>
+						<h5>Sinfónicas</h5>
+						<p>Orquestas Sinfónicas, Liricas y mas.</p>
+					</div>
+					<div class="card">
+						<i class="fa-solid fa-car-on fa-2xl"></i>
+						<h5>SoundCars</h5>
+						<p>Sound Car para fanáticos del automovilismo y sonido.</p>
+					</div>
+				</section>
+			</section>
+			<!-- <div class="welcome-search-box">
+				<div class="search-box">
+					<form action="#">
+						<label for="#">Tipo de Evento</label>
+						<input id="#" type="text" placeholder=" Ej: Parque, Teatro, Plaza...">
+						<label for="%">Ubicación</label>
+						<input id="%" type="text" placeholder=" Ej: Londres, Nueva York...">
+					</form>
+				</div>
+				<div class="welcome-search">
+					<button class="welcome-hero-btn" onclick="window.location.href='#'">
+						search <i data-feather="search"></i>
+					</button>
+				</div>
+			</div>
+			<div>
+				<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=UTC&showTitle=0&showPrint=0&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZDA3OWQ1YjZiMWIyZDEzY2I5NDI4ZjMzMzk2MjYxNTg3MmMwYThiNWQ5Njg5NWJmNjZhNGFmOWUwMzA3OTQwOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%2333B679&color=%234285F4" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+			</div> -->
+		</div>
+
+	</section>
+
+	<section id="funciona">
+		<div class="section-plan">
+			<h2>¿Cómo funciona?</h2>
+			<p>Aprende más sobre cómo funciona nuestro sitio web.</p>
+			<div class="container-plan">
+				<div>
+					<i class="fa-regular fa-lightbulb fa-2xl"></i>
+					<h3>Elige un plan.</h3>
+					<p>
+						Promociona tus eventos sin limite.
+					</p>
+					<a class="btn-funtion" onclick="window.location.href='#'">Leer más</a>
+				</div>
+				<div>
+					<i class="fa-solid fa-binoculars fa-2xl"></i>
+					<h3>Encuentra lo que quieres.</h3>
+					<p>
+						Los eventos de tu ciudad a un clic.
+					</p>
+					<a class="btn-funtion" onclick="window.location.href='#'">Leer más</a>
+				</div>
+				<div>
+					<i class="fa-solid fa-location-dot fa-2xl"></i>
+					<h3>Explora increíbles lugares.</a></h3>
+					<p>
+						Increibles oportunidades de ocio para ti y tus amigos.
+					</p>
+					<a class="btn-funtion" onclick="window.location.href='#'">Leer más</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="explore" class="explore">
+		<div class="container">
+			<div class="section-header">
+			<h2>Explora</h2>
+			<p>Conoce nuevas artes, músicas, culturas, lugares...</p>
+			</div><!--/.section-header-->
+			<div class="explore-content">
+			<!-- Content will be dynamically generated by JavaScript -->
+			</div>
+		</div>
+	</section>
+
+
+	<section id="reviews" class="reviews">
+		<div class="section-header">
+			<h2>Reseñas de nuestros afiliados</h2>
+			<p>Lo que nuestros clientes dicen sobre nosotros.</p>
+		</div>
+		<div class="reviews-content">
+			<div class="testimonial-carousel slider">
+				<div class="single-testimonial-box slide activate">
+					<div class="testimonial-description">
+						<div class="testimonial-info">
+							<div class="testimonial-img">
+								<img src="assets/img/c1.png" alt="clients">
+							</div>
+							<div class="testimonial-person">
+								<h2>Andrés Cuccittini</h2>
+								<h4>Rosario, Argentina</h4>
+								<div class="testimonial-person-star">
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+								</div>
+							</div>
+						</div>
+						<div class="testimonial-comment">
+							<p>
+								Fuimo al Metropolitano en Barranquilla la pasamo de 10.
+							</p>
+						</div><!--/.testimonial-comment-->
+					</div><!--/.testimonial-description-->
+				</div><!--/.single-testimonial-box-->
+				<div class="single-testimonial-box slide">
+					<div class="testimonial-description">
+						<div class="testimonial-info">
+							<div class="testimonial-img">
+								<img src="assets/img/c2.png" alt="clients">
+							</div><!--/.testimonial-img-->
+							<div class="testimonial-person">
+								<h2>Pablo Perez</h2>
+								<h4>Mar de Plata, Argentina</h4>
+								<div class="testimonial-person-star">
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+								</div>
+							</div><!--/.testimonial-person-->
+						</div><!--/.testimonial-info-->
+						<div class="testimonial-comment">
+							<p>
+								Fuimos al teatro colon y se nos hizo muy facil mediante la página.
+							</p>
+						</div><!--/.testimonial-comment-->
+					</div><!--/.testimonial-description-->
+				</div><!--/.single-testimonial-box-->
+				<div class="single-testimonial-box slide">
+					<div class="testimonial-description">
+						<div class="testimonial-info">
+							<div class="testimonial-img">
+								<img src="assets/img/c3.png" alt="clients">
+							</div><!--/.testimonial-img-->
+							<div class="testimonial-person">
+								<h2>Jaime Hossain</h2>
+								<h4>Bogota, Colombia</h4>
+								<div class="testimonial-person-star">
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+								</div>
+							</div><!--/.testimonial-person-->
+						</div><!--/.testimonial-info-->
+						<div class="testimonial-comment">
+							<p>
+								Visitamos el teatro colón.
+							</p>
+						</div><!--/.testimonial-comment-->
+					</div><!--/.testimonial-description-->
+				</div><!--/.single-testimonial-box-->
+				<div class="single-testimonial-box slide">
+					<div class="testimonial-description">
+						<div class="testimonial-info">
+							<div class="testimonial-img">
+								<img src="assets/img/c4.png" alt="clients">
+							</div><!--/.testimonial-img-->
+							<div class="testimonial-person">
+								<h2>Leonard Smith</h2>
+								<h4>Santiago, Chile</h4>
+								<div class="testimonial-person-star">
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+								</div>
+							</div><!--/.testimonial-person-->
+						</div><!--/.testimonial-info-->
+						<div class="testimonial-comment">
+							<p>
+								Muy buena la estadia en el Hotel O'Higgins, no habia nadie.
+							</p>
+						</div><!--/.testimonial-comment-->
+					</div><!--/.testimonial-description-->
+				</div><!--/.single-testimonial-box-->
+				<div class="single-testimonial-box slide">
+					<div class="testimonial-description">
+						<div class="testimonial-info">
+							<div class="testimonial-img">
+								<img src="assets/img/c1.png" alt="clients">
+							</div><!--/.testimonial-img-->
+							<div class="testimonial-person">
+								<h2>Tom Leakar</h2>
+								<h4>Caracas, Venezuela</h4>
+								<div class="testimonial-person-star">
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+								</div>
+							</div><!--/.testimonial-person-->
+						</div><!--/.testimonial-info-->
+						<div class="testimonial-comment">
+							<p>
+								Fuimos a ver un show al Luna Park que encontramos aqui.
+							</p>
+						</div><!--/.testimonial-comment-->
+					</div><!--/.testimonial-description-->
+				</div><!--/.single-testimonial-box-->
+				<div class="single-testimonial-box slide">
+					<div class="testimonial-description">
+						<div class="testimonial-info">
+							<div class="testimonial-img">
+								<img src="assets/img/c2.png" alt="clients">
+							</div><!--/.testimonial-img-->
+							<div class="testimonial-person">
+								<h2>Leandro Paredes</h2>
+								<h4>Buenos Aires, Argentina</h4>
+								<div class="testimonial-person-star">
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+								</div>
+							</div><!--/.testimonial-person-->
+						</div><!--/.testimonial-info-->
+						<div class="testimonial-comment">
+							<p>
+								Vimos el partido de la 21.
+							</p>
+						</div><!--/.testimonial-comment-->
+					</div><!--/.testimonial-description-->
+				</div><!--/.single-testimonial-box-->
+				<div class="single-testimonial-box slide">
+					<div class="testimonial-description">
+						<div class="testimonial-info">
+							<div class="testimonial-img">
+								<img src="assets/img/c3.png" alt="clients">
+							</div><!--/.testimonial-img-->
+							<div class="testimonial-person">
+								<h2>Shohrab Hossain</h2>
+								<h4>london, UK</h4>
+								<div class="testimonial-person-star">
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+								</div>
+							</div><!--/.testimonial-person-->
+						</div><!--/.testimonial-info-->
+						<div class="testimonial-comment">
+							<p>
+								Great website, easy to find things to do when abroad.
+							</p>
+						</div><!--/.testimonial-comment-->
+					</div><!--/.testimonial-description-->
+				</div><!--/.single-testimonial-box-->
+				<div class="single-testimonial-box slide">
+					<div class="testimonial-description">
+						<div class="testimonial-info">
+							<div class="testimonial-img">
+								<img src="assets/img/c4.png" alt="clients">
+							</div><!--/.testimonial-img-->
+							<div class="testimonial-person">
+								<h2>Raymodn Bradley</h2>
+								<h4>Viña del Mar, Chile</h4>
+								<div class="testimonial-person-star">
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+								</div>
+							</div><!--/.testimonial-person-->
+						</div><!--/.testimonial-info-->
+						<div class="testimonial-comment">
+							<p>
+								Encontramos un viñedo para ir con amigos.
+							</p>
+						</div><!--/.testimonial-comment-->
+					</div><!--/.testimonial-description-->
+				</div><!--/.single-testimonial-box-->
+			</div>
+		</div>
+
+	</section>
+
+	<section id="statistics" class="statistics">
+		<div class="container">
+			<div class="statistics-counter">
+				<div class="col-md-3 col-sm-6">
+					<div class="single-ststistics-box">
+						<div class="statistics-content">
+							<div class="counter">90 </div> <span>K+</span>
+						</div><!--/.statistics-content-->
+						<h3>Anuncios</h3>
+					</div><!--/.single-ststistics-box-->
+				</div><!--/.col-->
+				<div class="col-md-3 col-sm-6">
+					<div class="single-ststistics-box">
+						<div class="statistics-content">
+							<div class="counter">40</div> <span>k+</span>
+						</div><!--/.statistics-content-->
+						<h3>Categorías</h3>
+					</div><!--/.single-ststistics-box-->
+				</div><!--/.col-->
+				<div class="col-md-3 col-sm-6">
+					<div class="single-ststistics-box">
+						<div class="statistics-content">
+							<div class="counter">65</div> <span>k+</span>
+						</div><!--/.statistics-content-->
+						<h3>Visitantes</h3>
+					</div><!--/.single-ststistics-box-->
+				</div><!--/.col-->
+				<div class="col-md-3 col-sm-6">
+					<div class="single-ststistics-box">
+						<div class="statistics-content">
+							<div class="counter">50</div> <span>k+</span>
+						</div><!--/.statistics-content-->
+						<h3>Clientes satisfechos</h3>
+					</div><!--/.single-ststistics-box-->
+				</div><!--/.col-->
+			</div><!--/.statistics-counter-->
+		</div><!--/.container-->
+
+	</section>
+
+
+	<section id="blog" class="blog">
+		<div class="container-blog">
+			<div class="section-header">
+				<h2>Noticias y Articulos</h2>
+				<p>Siempre actualizado con nuestras últimas noticias y artículos.</p>
+			</div>
+
+			<div class="blog-content">
+				<div class="single-blog-item-txt">
+					<h2><a href="#">Crea tu evento fácilmente.</a></h2>
+					<img src="assets/img/a1.jpg" alt="blog image">
+					<h4>posted <span>by</span> <a href="#">admin</a> Agosto 2022</h4>
+					<p>
+						Eventos faciles de crear.
+					</p>
+				</div>
+				<div class="single-blog-item-txt">
+					<h2><a href="#">Organiza tus actividades</a></h2>
+					<img src="assets/img/a2.jpg" alt="blog image">
+
+					<h4>posted <span>by</span> <a href="#">admin</a> Agosto 2022</h4>
+					<p>
+						Organiza actividades con tu pareja o amigos.
+					</p>
+				</div>
+				<div class="single-blog-item-txt">
+					<h2><a href="#">Encuentra tu lugar deseado</a></h2>
+					<img src="assets/img/a3.jpg" alt="blog image">
+
+					<h4>posted <span>by</span> <a href="#">admin</a> Agosto 2022</h4>
+					<p>
+						Cientos de lugares para visitar en tu ciudad.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		</div>
+		</div>
+		</div><!--/.container-->
+
+	</section>
+
+	<footer>
+		<div class="footer-content">
+			<div class="footer-cards">
+				<h5>About Us</h5>
+				<p>Nos centramos en que puedas encontrar lo que buscas en un solo lugar.</p>
+			</div>
+			<div class="footer-cards">
+				<h5>Contact Us</h5>
+				<p>info@entertainecho.com.</p>
+			</div>
+			<div class="footer-cards">
+				<h5>Newsletter</h5>
+				<form action="#">
+					<input type="email" class="footer-input" id="email" placeholder=" Enter your email">
+					<input type="submit" class="submit-input" value="SUSCRIBE" class="contact-btn">
+				</form>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="footer-logo">
+				<h2 class="logo">Entertain<span>Echo</span></h2>
+				<div class="social-icons">
+					<a href="#"><i class="fa-brands fa-facebook"></i></a>
+					<a href="#"><i class="fa-brands fa-twitter"></i></a>
+					<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+					<a href="#"><i class="fa-brands fa-instagram"></i></a>
+				</div>
+			</div>
+			<p>© 2023 all right reserved. Desing c15-44-ft-python-react</p>
+		</div>
+	</footer>
+</body>
+</html>

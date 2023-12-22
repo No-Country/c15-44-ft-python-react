@@ -1,0 +1,888 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("//fonts.googleapis.com/css?family=Product+Sans");
+
+.menu-mobile {
+  display: none;
+}
+
+/*=========== TABLE OF CONTENTS ===========
+1.  General css (Reset code)
+2.  Header-top
+3.  Top-area
+4.  Welcome-hero
+5.  List-topics
+6.  Works  
+7.  Explore
+8.  Reviews
+9.  Counter
+10. Blog
+11. Subscribe
+12. Footer
+==========================================*/
+
+/* -------------------------------------
+		1.General css (Reset code)
+--------------------------------------*/
+:root {
+  --color-primary: #353535;
+  --color-secundary: #d60060;
+  --color-third: #fa5f5f;
+  --color-text-dark: #444;
+  --color-text-light: #ffffff;
+  --background-color: #ffffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 14px;
+  text-transform: initial;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* -------------------------------------
+		H's
+--------------------------------------*/
+
+h2 {
+  font-size: 32px;
+  color: var(--color-primary);
+}
+
+h3 {
+  font-size: 24px;
+  color: var(--color-primary);
+}
+
+/* -------------------------------------
+		P's
+--------------------------------------*/
+
+/* -------------------------------------
+		Header
+--------------------------------------*/
+header {
+  height: 80px;
+  width: 100%;
+  background-color: var(--background-color);
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+header,
+nav,
+.menu-screen,
+.menu-screen li,
+.welcome-search-box,
+.single-welcome-form {
+  display: flex;
+}
+
+nav {
+  width: 100%;
+  margin: 0 10px;
+  justify-content: space-between;
+}
+
+.menu-desktop,
+.menu-desktop ul {
+  display: flex;
+}
+
+.menu-desktop li,
+.logo {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -------------------------------------
+		Logo - Nombre
+--------------------------------------*/
+
+.logo,
+.menu-desktop li a {
+  color: var(--color-primary);
+}
+
+.logo span {
+  color: var(--color-secundary);
+}
+
+/* -------------------------------------
+		END         Logo - Nombre
+--------------------------------------*/
+
+/* -------------------------------------
+		JOIN
+--------------------------------------*/
+.join {
+  margin-top: 80px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.join>div {
+  margin: 15px;
+}
+
+.join a {
+  color: var(--color-primary);
+}
+
+.join a:hover {
+  color: var(--color-secundary);
+  transition: all 0.5s ease;
+}
+
+/* -------------------------------------
+		END     JOIN
+--------------------------------------*/
+
+.menu-desktop li a:hover,
+.social-icons a:hover {
+  color: var(--color-secundary);
+  transition: 0.6s ease;
+}
+
+/* -------------------------------------
+		start       inicio
+--------------------------------------*/
+.welcome {
+  background-image: url("../assets/img/b1.jpg");
+  /* filter: brightness(70%); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.welcome-txt h3 {
+  margin: 25px;
+  font-size: 48px;
+  color: var(--color-text-dark);
+}
+
+.welcome-txt p {
+  margin: 25px;
+  color: var(--color-text-light);
+  font-size: 24px;
+}
+
+.welcome-search-box {
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.search-box {
+  padding: 20px;
+  background-color: var(--background-color);
+  border-radius: 10px;
+  margin: 10px;
+  width: 75%;
+}
+
+.search-box form label,
+.welcome-search button,
+.submit-input {
+  font-size: 20px;
+  padding: 20px 10px;
+  border-radius: 10px;
+}
+
+.search-box form input {
+  height: 40px;
+  border-radius: 5px;
+  width: 30%;
+}
+
+.welcome-search button,
+.submit-input {
+  background-color: var(--color-secundary);
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.welcome-search button:hover,
+.submit-input:hover {
+  background-color: var(--color-third);
+  color: var(--color-text-light);
+  transition: 0.5s ease;
+}
+
+/* -------------------------------------
+		END     inicio
+--------------------------------------*/
+/* --------------- CARDS --------------- */
+.events-types,
+.section-plan,
+.explore,
+.reviews {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.cards {
+  margin: 20px 20px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 10px;
+  padding: 30px;
+  border: 2px solid var(--color-secundary);
+  border-radius: 10px;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff6e;
+}
+
+.card:hover {
+  background-color: var(--color-secundary);
+  color: var(--color-text-light);
+  transition: all 0.5s ease;
+}
+
+.card h5 {
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.card p {
+  font-size: 14px;
+  font-weight: bolder;
+  text-align: center;
+  margin: 10px 0 0 0;
+  text-align: left;
+}
+
+/* --------------- END CARDS --------------- */
+/* --------------- SECTION PLAN --------------- */
+.container-plan {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.container-plan div {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container-plan div>i,
+h3,
+p,
+button {
+  margin: 20px;
+  text-align: left;
+}
+
+.container-plan div:hover>h3,
+.container-plan div:hover {
+  background-color: var(--color-secundary);
+  transition: all 0.5s ease;
+  color: var(--color-text-light);
+}
+
+/* --------------- END SECTION PLAN --------------- */
+
+/* --------------- SECTION SITES --------------- */
+.explore-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sites {
+  width: 300px;
+  margin: 10px;
+}
+
+.sites img, .single-blog-item-txt img {
+  max-width: 100%;
+  /* La imagen se ajustará al ancho del contenedor */
+  height: auto;
+  /* Mantiene la proporción de aspecto de la imagen */
+  display: block;
+  /* Elimina espacio adicional debajo de la imagen */
+}
+
+/* --------------- END SECTION SITES --------------- */
+
+/*-------------------------------------
+        8. Reviews
+--------------------------------------*/
+.reviews {
+  padding: 100px 0 75px;
+}
+
+.reviews-content {
+  margin: 36px auto 0;
+}
+
+/*single-testimonial-box */
+.single-testimonial-box {
+  padding: 50px 30px;
+  box-shadow: 0px 10px 10px 10px rgba(71, 71, 71, 0.2);
+  overflow-x: hidden;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.single-testimonial-box:hover {
+  box-shadow: 0px 10px 10px 10px rgba(21, 19, 19, 0.2);
+}
+
+.slick-current .single-testimonial-box {
+  box-shadow: 0 10px 20px rgba(21, 19, 19, 0.2);
+}
+
+/*testimonial-description*/
+.single-testimonial-box {
+  width: 70%;
+  background: #fff;
+}
+
+/* testimonial-info */
+.testimonial-info {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.testimonial-img {
+  position: relative;
+  top: 11px;
+  margin-right: 5px;
+  border-radius: 50%;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.testimonial-person {
+  margin-left: 15px;
+  margin-top: 11px;
+}
+
+.testimonial-person h2 {
+  color: #505866;
+  font-size: 18px;
+}
+
+.testimonial-person h4 {
+  color: #a2a5ab;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.testimonial-person-star {
+  color: #ffda2b;
+  margin: 5px;
+}
+
+/* testimonial-info */
+
+/* testimonial-comment */
+.testimonial-comment {
+  margin-top: 18px;
+}
+
+.testimonial-comment p {
+  color: #8d939e;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* testimonial-comment */
+/* SLIDER */
+.slider {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.slide {
+  width: 100%;
+  /* height: 300px; */
+  opacity: 0;
+  transition: opacity .5s ease-out;
+}
+
+.slide.activate {
+  opacity: 1;
+  transition: opacity .5s ease-out;
+}
+
+/* Oculta todos los elementos .single-testimonial-box */
+.single-testimonial-box {
+  display: none;
+}
+
+/* Muestra solo el elemento con la clase .active */
+.single-testimonial-box.activate {
+  display: block;
+  width: 70%;
+  margin: 0px auto;
+}
+
+/* SLIDER */
+
+/*-------------------------------------
+        END Reviews
+--------------------------------------*/
+
+/*-------------------------------------
+        Statistics
+--------------------------------------*/
+.statistics {
+  background-image: url('../assets/img/b2.jpg');
+  filter: brightness();
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.statistics-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+}
+
+.statistics-content {
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+  font-weight: 600;
+}
+
+/*-------------------------------------
+        END Statistics
+--------------------------------------*/
+/*-------------------------------------
+        Blog
+--------------------------------------*/
+.container-blog {
+  margin: 100px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-top: 100px;
+}
+.blog-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.single-blog-item-txt {
+  border-radius: 10px;
+  width: 300px;
+  height: auto;
+  margin: 10px;
+  box-shadow: 0 10px 50px rgba(21,19,19,.4);
+}
+
+.single-blog-item-txt a {
+  color: var(--color-primary);
+}
+
+.single-blog-item-txt:hover > h2{
+  color: var(--color-secundary);
+} 
+.single-blog-item-txt:hover {
+  box-shadow: 0 10px 20px rgba(21,19,19,.4);
+}
+
+/*-------------------------------------
+       END Blog
+--------------------------------------*/
+
+
+/* --------------- FOOTER --------------- */
+footer {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content {
+  color: var(--font-color-light);
+  margin: 10px 10px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-cards {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+}
+
+.footer-cards h2 {
+  display: flex;
+}
+
+.social-icons {
+  display: flex;
+  color: var(--font-color-light);
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.social-icons a {
+  margin: 10px 50px;
+  color: var(--bg-color);
+  font-size: xx-large;
+}
+
+.footer-cards h5 {
+  font-size: 20px;
+}
+
+.footer-cards p {
+  font-size: 12px;
+  font-weight: bolder;
+}
+
+.footer-input {
+  margin: 10px 0;
+  border-radius: 10px;
+  background-color: var(--bg-color);
+  color: var(--bg-color-black);
+  height: 40px;
+}
+
+.footer-input::placeholder {
+  color: black;
+  font-weight: bolder;
+}
+
+.submit-input {
+  margin: 10px 0;
+  padding: 10px 30px;
+}
+
+.copyright {
+  width: 90%;
+  border-top: 2px solid var(--font-color-light);
+  color: var(--font-color-light);
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --------------- END FOOTER --------------- */
+
+@media (max-width: 1075px) {
+  .search-box {
+    width: 90%;
+  }
+
+  .search-box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-box form input {
+    width: 100%;
+  }
+
+  .welcome-search button {
+    height: 260px;
+  }
+}
+
+/* @media (max-width: 950px) {
+    .footer-content {
+      flex-direction: column;
+
+    }
+
+  } */
+
+@media (max-width: 868px) {
+
+  /* ---------- Menu Hamburguesa ----------*/
+  .menu-desktop {
+    display: none;
+  }
+
+  .menu-mobile {
+    display: flex;
+    justify-content: flex-end;
+    background-color: transparent;
+  }
+
+  div .logo {
+    height: 90px;
+    display: flex;
+    align-items: center;
+  }
+
+  div .logo span {
+    color: var(--color-secundary);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    background: var(--color-header);
+    position: relative;
+    justify-content: space-between;
+    max-height: 90px;
+  }
+
+  nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px;
+    margin: 0 10px;
+    color: var(--color-primary);
+  }
+
+  nav a {
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.5s ease;
+  }
+
+  .icono-menu {
+    position: relative;
+    z-index: 5;
+    right: 0;
+    background-color: transparent;
+  }
+
+  .icono-menu.active {
+    transform: translate(0px);
+    background-color: #fbfbfb;
+    transition: all 1s ease;
+  }
+
+  .icono-menu span {
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: black;
+    transition: transform 0.3s;
+    margin: 10px 0;
+    border-radius: 30px;
+  }
+
+  .icono-menu.active span:nth-child(1) {
+    transform: translateY(14px) rotate(45deg);
+  }
+
+  .icono-menu.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .icono-menu.active span:nth-child(3) {
+    transform: translateY(-14px) rotate(-45deg);
+  }
+
+  /* Estilos para el contenedor del menú */
+  .cont-menu {
+    background-color: var(--color-text-light);
+    box-shadow: -50px 0px 0px 0px rgba(66, 66, 66, 0.6);
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: -500px;
+    transition: all 0.7s ease;
+    margin-top: 85px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Estilos para el listado del menú */
+  .cont-menu ul {
+    display: flex;
+    margin: 10px 0 100px 0;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+
+  .cont-menu ul li {
+    /*color: black;*/
+    display: block;
+    font-size: 25px;
+    text-decoration: none;
+  }
+
+  .cont-menu ul li.active {
+    transform: translate(0);
+    background-color: #e7aa26;
+  }
+
+  .cont-menu ul li.active a {
+    color: #fbfbfb;
+  }
+
+  /* Estilos por agregar en JavaScript */
+  .active {
+    transform: translate(-485px);
+  }
+
+  .opacity {
+    transition: all 0.5s ease;
+  }
+
+  /* -------------------------------------
+          END     Header
+  --------------------------------------*/
+
+  .join {
+    justify-content: center;
+  }
+
+  .welcome-txt h3 {
+    font-size: 32px;
+    margin: 10px;
+    text-align: left;
+  }
+
+  .welcome-txt p {
+    font-size: 16px;
+    margin: 10px;
+    text-align: left;
+  }
+
+  .welcome-search-box {
+    flex-direction: column;
+  }
+
+  .search-box form input,
+  .welcome-search {
+    width: 90%;
+  }
+
+  .welcome-search button {
+    width: 90%;
+    margin: 0;
+    padding: 10px;
+    height: auto;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .container-plan {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .container-plan div {
+    width: 90%;
+    margin: 10px;
+  }
+
+  .single-testimonial-box.activate {
+    width: 90%;
+  }
+
+  .statistics-counter {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .single-ststistics-box {
+    margin-top: 40px;
+  }
+
+  .single-ststistics-box h3 {
+    margin: 0;
+  }
+
+  .blog-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .single-blog-item-txt {
+    width: 90%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-content,
+  .footer-logo h2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo h2 {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .footer-cards {
+    width: 80%;
+  }
+
+  .social-icons a {
+    font-size: large;
+    margin: 10px 20px;
+  }
+
+  input#email {
+    width: 80%;
+  }
+}

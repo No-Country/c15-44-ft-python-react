@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: ./server # Update the path to your FastAPI app directory
+      dockerfile: Dockerfile
+    container_name: my_fastapi_app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=web_dev
+      - SQLALCHEMY_DATABASE_URI="postgresql+psycopg://postgres:postgres@db:5432/web_dev"
+
+  db:
+    build:
+      context: ./server/db
+      dockerfile: Dockerfile
+    container_name: eventsdb
+    ports:
+      - 5432:5432
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  frontend:
+    build:
+      context: ./client # Update the path to your frontend project directory
+      dockerfile: Dockerfile
+    container_name: my_frontend_app
+    ports:
+      - "80:80" # Expose the port based on the Nginx configuration
+    depends_on:
+      - app
+
+volumes:
+  db-data:

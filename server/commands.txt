@@ -1,0 +1,31 @@
+start.cmd = "uvicorn src.main:app --reload"
+start.env = { PYTHONPATH = "./src" }
+lint = "pdm run ruff"
+format = "pdm run black"
+laf = { composite = ["lint src/", "format src/"] }
+sort = "pdm run isort src"
+pre-commit = { composite = ["laf", "sort"] }
+migrate.cmd = "alembic revision --autogenerate"
+migrate.env = { PYTHONPATH = "./src" }
+migrate-apply.cmd = "alembic upgrade head"
+migrate-apply.env = { PYTHONPATH = "./src" }
+migrate-revert.cmd = "alembic downgrade -1"
+migrate-rever.env = { PYTHONPATH = "./src" }
+
+
+
+uvicorn>=0.24.0.post1
+fastapi>=0.104.1
+
+{
+  "id": 1,
+  "name": "test1",
+  "creator_id": 1,
+  "timestamp": "2023-12-21T02:36:13.139446",
+  "date_and_time": "2023-12-21T02:51:23.388Z",
+  "country_id": 6,
+  "province_id": 12,
+  "address": "string",
+  "price": 10,
+  "category_id": 1
+}
