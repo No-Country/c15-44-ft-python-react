@@ -51,12 +51,11 @@ setInterval(() => {
 }, 5000);
 
 // Code for fetching events from the API
-const apiUrl = "http://15.228.43.131:8000/events/?country_id=1";
+const apiUrl = "/events/?country_id=1";
 
-fetch(apiUrl)
+fetch(apiUrl, { method: "GET", port: 8000 })
   .then((response) => response.json())
   .then((data) => {
-    console.log(data, "testing");
     // Process the data from the API and update your DOM as needed
     const exploreContent = document.querySelector(".explore-content");
 
